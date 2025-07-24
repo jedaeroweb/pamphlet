@@ -1,24 +1,20 @@
-# README
+# What is Jedaeroweb pamphlet
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Jedaeroweb Pamphlet is Simple Pamphlet Site
 
-Things you may want to cover:
+this application is composed of [Rails](http://rubyonrails.org/)(user-pages,admin-pages) + UI [Boostrap](http://getbootstrap.com)
 
-* Ruby version
+## Server Requirements
 
-* System dependencies
+[Rails](http://rubyonrails.org/) version 7 or newer is recommended.
 
-* Configuration
+## Demo
+[demo page](https://pamphlet.jedaeroweb.co.kr)
 
-* Database creation
+## License
 
-* Database initialization
+MIT, All Free
 
-* How to run the test suite
+## Author
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[jedaeroweb](https://www.jedaeroweb.co.kr)
