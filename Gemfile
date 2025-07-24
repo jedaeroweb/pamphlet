@@ -50,6 +50,7 @@ gem 'nokogiri', '>= 1.18.9'
 gem 'impressionist'
 gem 'acts-as-taggable-on'
 gem 'acts_as_commentable_with_threading'
+gem 'acts_as_votable'
 
 gem 'sassc-rails'
 gem 'bootstrap', '~> 5.3'
