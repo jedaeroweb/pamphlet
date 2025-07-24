@@ -41,7 +41,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "com.intellij.lang.ruby.rbs.tools.collection.workspace.sync.RbsCollectionUpdateProjectActivity#LAST_UPDATE_TIMESTAMP": "1753326012177",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/home/toughjjh/Projects/pamphlet/app/assets/stylesheets/front",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -164,7 +164,7 @@
       <workItem from="1753177358059" duration="647000" />
       <workItem from="1753259429514" duration="3038000" />
       <workItem from="1753275362781" duration="1058000" />
-      <workItem from="1753325952636" duration="70000" />
+      <workItem from="1753325952636" duration="5516000" />
     </task>
     <servers />
   </component>
@@ -172,6 +172,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/pamphlet@pamphlet.rcov" NAME="pamphlet 커버리지 결과" MODIFIED="1753275366308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pamphlet" />
+    <SUITE FILE_PATH="coverage/pamphlet@pamphlet.rcov" NAME="pamphlet 커버리지 결과" MODIFIED="1753329619647" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="pamphlet" />
   </component>
 </project>
