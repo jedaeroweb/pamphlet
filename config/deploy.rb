@@ -43,3 +43,4 @@ namespace :deploy do
   after :finishing, 'deploy:refresh_sitemap'
   after :finishing, 'deploy:cleanup'
 end
+ 
