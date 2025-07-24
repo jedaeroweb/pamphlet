@@ -1,6 +1,6 @@
 set :application, "community"
 set :repo_url, "git@github.com:jedaeroweb/pamphlet.git"
-set :branch, 'master'
+set :branch, 'main'
 set :deploy_to, '/home/deploy/pamphlet'
 
 # set :format, :pretty

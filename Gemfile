@@ -71,10 +71,28 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  # Capistrano
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-passenger'
+  gem 'capistrano-rails'
 end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+end
+
+group :production do
+  gem 'asset_sync'
+  gem 'fog-azure-rm', git: 'https://github.com/sleepinglion/fog-azure-rm'
+  gem 'mysql2'
+  gem "redis", "~> 5.0" # Redis client for Ruby
+  gem "redis-actionpack", "~> 5.3" # Redis session store for ActionPack
+  gem 'dotenv-rails'
+  gem 'recaptcha', :require => 'recaptcha/rails'
+  gem 'rails-letsencrypt'
 end
