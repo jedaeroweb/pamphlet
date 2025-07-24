@@ -13,7 +13,7 @@ set :rbenv_type, :user
 set :rbenv_ruby, "3.3.4"
 set :rbenv_prefix, "$HOME/.rbenv/bin/rbenv exec"
 set :ssh_options, verify_host_key: :never
-set :default_env, {'NODE_OPTIONS'=>'--openssl-legacy-provider'}
+#set :default_env, {'NODE_OPTIONS'=>'--openssl-legacy-provider'}
 set :bundle_path, '/usr/local/bundle'
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
