@@ -1,0 +1,14 @@
+<aside>
+	<nav>
+		<ul>
+			<li><%=link_to t('activerecord.models.resource'),admin_resources_path %></li>
+			<% unless @resources.empty? %>
+			<% @resources.each do |resource| %>
+			<li><%=link_to t('activerecord.models.'+resource.controller.singularize),'/admin/'+resource.controller %></li>
+			<% end %>
+			<% else %>
+			<li><%=t(:no_data) %></li>
+			<% end %>
+		</ul>
+	</nav>
+</aside>

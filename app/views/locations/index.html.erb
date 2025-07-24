@@ -1,0 +1,31 @@
+<% breadcrumb :locations %>
+<% if notice %>
+<%= render :partial => 'layouts/notice',:locals=>{:notice=>notice} %>
+<% end %>
+<section id="sl_location_index">
+	<article>
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyANSfD3J0wpwVc-FJjYA-C4Y-E9FSYMKxE&sensor=1"></script>	
+	<div id="map_canvas" style="width:728px;height:400px;"></div>
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(-34.397, 150.644),
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map_canvas"),
+            mapOptions);
+      }
+    </script>
+	</article>
+	<article>
+		<h3>IPark 영통역 오피스텔 주소</h3>
+		<dl>
+			<dt>모델하우스</dt>
+			<dd>경기도 수원시 영통구 매영로 345번길 40</dd>
+			<dt>현장</dt>
+			<dd>경기도 수원시 영통구 반달로 95</dd>
+		</dl>
+	</article>
+	<h3>방문에 어려움이 있거나, 방문하셨을때 6팀 정종호 과장(<a href="tel://<%=t(:tel) %>"><%=t(:tel) %></a>)을 찾아주세요</h3>
+</section>	

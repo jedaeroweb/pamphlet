@@ -1,0 +1,37 @@
+<article id="sl_blog_categories" class="box sl_aside">
+  <div class="box_header">
+    <h2><%=t('activerecord.models.blog') %></h2>
+    <div class="box_icon">
+      <a href="#" class="btn_minimize"><i class="glyphicon glyphicon-chevron-up"></i></a>
+      <a href="#" class="btn_close"><i class="glyphicon glyphicon-remove"></i></a>
+    </div>
+  </div>
+	<div class="box_content">
+		<ul>
+			<li <% unless params[:blog_category_id] %>class="active"<% end %>><%=link_to t(:all_category),blogs_path %></li>
+    	<% unless @aside_blog_categories.empty? %>
+    	<% @aside_blog_categories.each do |blog_category| %>
+    	<% if blog_category.blog_category_id.nil? %>
+			<li>
+      	<% if blog_category.leaf %>
+      	<%= link_to blogs_path(:blog_category_id=>blog_category.id) do %><%=blog_category.title.truncate(16) %>(<%=blog_category.blogs_count.to_s %>)<% end %>
+      	<% else %>
+      	<span class="c_pointer"><span><%=blog_category.title %></span><span class="cursor">&nbsp;&gt;&gt;</span></span>  	
+      	<% end %>
+      	<ul>
+    			<% @aside_blog_categories.each do |blog_sub_category| %>
+      		<% if blog_sub_category.blog_category_id==blog_category.id %>
+      		<li <% if params[:blog_category_id].to_i==blog_sub_category.id.to_i %>class="active"<% end %>><%= link_to blog_sub_category.title.truncate(16)+'('+blog_sub_category.blogs_count.to_s+')', blogs_path(:blog_category_id=>blog_sub_category.id)  %></li>
+      		<% end %>
+      		<% end %>
+      	</ul>
+     	</li>
+     <% end %>     	
+    	<% end %>
+    	<% else %>
+			<li><%=t(:no_data) %></li>
+    	<% end %>
+		</ul>
+		<%=link_to t(:link_more),blogs_path,:class=>'more' %>	
+	</div>
+</article>

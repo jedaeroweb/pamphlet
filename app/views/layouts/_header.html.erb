@@ -1,0 +1,45 @@
+<header>
+	<div class="container">
+		<div class="row">
+			<h1 class="col-12 col-lg-6"><%=link_to raw('<span class="red">I</span>PARK<span class="small">영통역</span>'),root_path %></h1>
+			<% if user_signed_in? %>
+				<ul id="top_menu">
+					<li><%= link_to current_user.nickname,edit_user_registration_path %><%= t(:welcome)%></li>
+					<li><%= link_to t(:logout),destroy_user_session_path %></li>
+				</ul>
+			<% end %>
+			<nav class="col-12 col-lg-6">
+				<ul class="nav nav-pills">
+					<li role="presentation" class="dropdown <% if params[:controller]=='intro' || params[:controller]=='teams' || params[:controller]=='histories' || params[:controller]=='locations' %> active"<% end %>">
+						<%= link_to '#', { class: 'dropdown-toggle d-flex align-items-center gap-2',
+															 role: "button",
+															 'data-bs-toggle': "dropdown",
+															 'aria-expanded': "false" } do %>
+							<%=t('activerecord.models.intro') %> <span class="caret"></span>
+						<% end %>
+						<ul class="dropdown-menu">
+							<li><%=link_to intro_index_path,{class: 'dropdown-item'} do %><%=t('activerecord.models.intro') %><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
+							<li><%=link_to locations_path,{class: 'dropdown-item'} do %><%=t('activerecord.models.location') %><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
+							<!-- <li><%=link_to teams_path,{class: 'dropdown-item'} do %><%=t('activerecord.models.team') %><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li> -->
+							<li><%=link_to histories_path,{class: 'dropdown-item'} do %><%=t('activerecord.models.history') %><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
+						</ul>
+						</li>
+						<li <% if params[:controller]=='contacts' %>class="active"<% end %>>
+							<%=link_to new_contact_path do %><%=t('activerecord.models.contact') %><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %>
+						</li>
+						<li <% if params[:controller]=='blogs' %>class="active"<% end %>>
+							<%=link_to blogs_path do %><%=t('activerecord.models.blog') %><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %>
+						</li>
+						<li <% if params[:controller]=='galleries' %>class="active"<% end %>>
+							<%=link_to galleries_path do %><%=t('activerecord.models.gallery') %><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %>
+						</li>
+
+						<li <% if params[:controller]=='notices' %>class="active"<% end %>>
+							<%=link_to notices_path do %><%=t('activerecord.models.notice') %><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %>
+						</li>
+
+					</ul>
+			</nav>
+		</div>
+	</div>
+</header>

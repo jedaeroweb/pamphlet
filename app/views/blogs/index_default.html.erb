@@ -1,0 +1,44 @@
+<% breadcrumb :blogs %>
+<section id="sl_blog_index">
+	<ol class="nav nav-pills sl_categories hidden-lg">
+		<li <% unless params[:blog_category_id] %>class="active"<% end %>><%= link_to t(:all_category),blogs_path %></li>
+  	<% unless @blog_categories.empty? %>
+  	<% @blog_categories.each do |blog_category| %>
+  	<li <% if(@blog_category_id==blog_category.id) %>class="active"<% end %>>
+  	<%= link_to blogs_path(:blog_category_id=>blog_category.id) do %>
+  	<%=blog_category.title.truncate(20) %><span class="hidden-xs">(<%=blog_category.blogs_count %>)</span>
+  	<% end %>
+  	</li>
+  	<% end %>
+  	<% else %>
+  	<li><%=t(:no_data)%></li>
+		<% end %>
+  </ol>
+  <section id="sl_blog" <% unless @blogs.empty? %>itemscope itemprop="blogPosts" itemtype="http://schema.org/Blog"<% end %>>
+  <% unless @blogs.empty? %>
+  <% @blogs.each do |blog| %>
+  <article class="media" itemscope itemprop="blogPost" itemtype="http://schema.org/Blog">
+    <%=link_to blog_path(blog),:class=>"pull-left" do %>
+    <% if blog.photo? %>
+      <%=image_tag blog.photo.small_thumb, :class=>"media-object",:itemprop=>"thumbnailUrl",:alt=>"..." %>
+    <% end %>
+    <% end %>
+    <div class="media-body">
+      <h4 class="media-heading" itemprop="name"><%=link_to blog.title,blog_path(blog) %></h4>
+      <p itemprop="description"><%=link_to blog.description,blog_path(blog) %></p>
+    </div>
+  </article>
+  <% end %>
+	<% else %>
+  <div>
+  	<p><%=t(:no_data) %></p>
+  </div>
+  <% end %>
+  <div id="sl_bottom_menu">
+  <% if can? :create, Blog %>
+  <%= link_to t(:link_new), new_blog_path %>
+  <% end %>
+  <%= paginate @blogs %>
+  </div>   
+	</section>
+</section>

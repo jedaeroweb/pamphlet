@@ -1,0 +1,8 @@
+<header>
+	<nav>
+		<ul>
+			<li><%=link_to '홈' , '/admin' %></li>
+		</ul>
+	</nav>	
+	<div id="welcome"><%=link_to current_user.name,edit_user_registration_path %><%=t(:welcome)%> <%= link_to t(:logout),destroy_user_session_path %></div>
+</header>
