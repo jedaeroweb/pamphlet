@@ -79,7 +79,7 @@ article, aside, audio, canvas, command, datalist, details, embed, figcaption, fi
 mark, rp, rt, ruby, summary, time {display:inline;}
 
 /* layout */
-footer {clear:both;float:left;width:80%;margin:0 10%;;border-top:1px solid var(--bs-border-color);text-align: center}
+footer {clear:both;border-top:1px solid var(--bs-border-color);text-align: center}
 footer div {margin:0.3em 0 0}
 #mom {clear:both;float:left;width:100%;padding:0}
 .sub_main {padding-bottom:2rem;margin-bottom:2.5rem}
@@ -113,7 +113,7 @@ footer div {margin:0.3em 0 0}
 .c_pointer {cursor:pointer}
 
 /* header */
-header {position:relative;background:#eee;border-bottom:1px solid var(--bs-border-color)}
+header {position:relative;border-bottom:1px solid var(--bs-border-color)}
 header h1 a {display:block;margin:1.2em 0 0;padding:0;font-family:"Serif";vertical-align:top}
 header h1 a:hover {text-decoration:none}
 header h1 a:active {color:red}
@@ -480,6 +480,7 @@ a.left:active {background-position: -60px 0}
     color: #000
   }
 
+  header,footer {background-color: #eee}
   header a,  header a:visited {color:#666}
   header nav .active a,header nav .active a:visited {font-weight:bold;color:#333}
   .page-header h2 {color:#666}
