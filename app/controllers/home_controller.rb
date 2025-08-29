@@ -11,7 +11,11 @@ class HomeController < ApplicationController
     @galleries = Gallery.order('id desc').page(params[:page]).per(20)
     @blogs = Blog.order('id desc').where('photo IS NOT NULL').page(params[:page]).per(6)
   end
-  
+
+  def demo
+    render layout: false  # 레이아웃 없이 내용만 렌더링
+  end
+
   def popup
     @meta_description=t(:meta_description_popup)  
   end
