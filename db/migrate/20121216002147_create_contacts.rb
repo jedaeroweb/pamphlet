@@ -1,7 +1,6 @@
 class CreateContacts < ActiveRecord::Migration[6.0]
   def change
     create_table :contact_categories do |t|
-      t.references :user, :null=>false      
       t.string :title, :null=>false, :limit=>60
       t.integer :contacts_count, :null=>false, :default=>0      
       t.boolean :enable, :null=>false, :default=>true      

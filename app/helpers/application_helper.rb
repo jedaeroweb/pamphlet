@@ -1,4 +1,19 @@
 module ApplicationHelper
+  def userName(gg,length=false)
+    if length
+      if gg.user
+        return gg.user.nickname
+      else
+        return gg.name
+      end
+    else
+      if gg.user
+        return gg.user.nickname
+      else
+        return gg.name
+      end
+    end
+  end
   def list_param(lparam)
     lparam[:controller] = nil
     lparam[:action] = nil

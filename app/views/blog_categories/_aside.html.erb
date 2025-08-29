@@ -13,11 +13,7 @@
     	<% @aside_blog_categories.each do |blog_category| %>
     	<% if blog_category.blog_category_id.nil? %>
 			<li>
-      	<% if blog_category.leaf %>
       	<%= link_to blogs_path(:blog_category_id=>blog_category.id) do %><%=blog_category.title.truncate(16) %>(<%=blog_category.blogs_count.to_s %>)<% end %>
-      	<% else %>
-      	<span class="c_pointer"><span><%=blog_category.title %></span><span class="cursor">&nbsp;&gt;&gt;</span></span>  	
-      	<% end %>
       	<ul>
     			<% @aside_blog_categories.each do |blog_sub_category| %>
       		<% if blog_sub_category.blog_category_id==blog_category.id %>

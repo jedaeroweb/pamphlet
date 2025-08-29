@@ -1,32 +1,18 @@
 # encoding: utf-8
 
 class ContactsController < BoardController
-  before_action :authenticate_user!, :except => [:new,:create,:show]  
-  impressionist :actions=>[:show]
-  before_action :set_notice, only: [:show, :edit, :update, :destroy]
-  before_action :set_ad, only: [:index, :show]  
+  before_action :authenticate_user!, :except => [:new,:complete,:create, :show]
+  before_action :set_contact, only: [:show, :edit, :update, :destroy]
 
   def initialize(*params)
     super(*params)
     @controller_name=t('activerecord.models.contact')
-    @script="contact"
-  end
-
-  # GET /notices
-  # GET /notices.json
-  def index
-    @contacts = Contact.order('id desc').page(params[:page]).per(10)
-  end
-
-  # GET /notices/1
-  # GET /notices/1.json
-  def show
   end
   
   def complete
   end  
 
-  # GET /notices/new
+  # GET /contact/new
   def new
     @contact = Contact.new
     @contact_categories=ContactCategory.all
@@ -35,21 +21,13 @@ class ContactsController < BoardController
     end   
     
     @contact.build_contact_content
-        
-    @script="contact"
   end
 
-  # GET /notices/1/edit
-  def edit
-    @script="board/edit"  
-  end
-
-  # POST /notices
-  # POST /notices.json
+  # POST /contact
+  # POST /contact.json
   def create
     @contact = Contact.new(contact_params)
     @contact_categories=ContactCategory.all
-    @script="board/new"       
 
     respond_to do |format|
       if @contact.save
@@ -62,8 +40,8 @@ class ContactsController < BoardController
     end
   end
 
-  # PATCH/PUT /notices/1
-  # PATCH/PUT /notices/1.json
+  # PATCH/PUT /contact/1
+  # PATCH/PUT /contact/1.json
   def update
     @script="board/edit"
   
@@ -78,8 +56,8 @@ class ContactsController < BoardController
     end
   end
 
-  # DELETE /notices/1
-  # DELETE /notices/1.json
+  # DELETE /contact/1
+  # DELETE /contact/1.json
   def destroy
     @contact.destroy
     
@@ -91,7 +69,7 @@ class ContactsController < BoardController
 
   private
   # Use callbacks to share common setup or constraints between actions.
-  def set_notice
+  def set_contact
     @contact = Contact.find(params[:id])
   end
   

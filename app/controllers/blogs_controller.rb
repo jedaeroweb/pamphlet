@@ -17,11 +17,11 @@ class BlogsController < ApplicationController
   def index
     if params[:tag].present? 
       @blogs = Blog.tagged_with(params[:tag]).page(params[:page]).per(20)
-      @blog_categories=BlogCategory.where(:leaf=>true).where(:enable=>true)
+      @blog_categories=BlogCategory.where(:enable=>true)
       @meta_keywords=params[:tag]+','+t(:meta_keywords)
     else
 
-        @blog_categories=BlogCategory.where(:leaf=>true).where(:enable=>true)           
+        @blog_categories=BlogCategory.where(:enable=>true)
         if(params[:blog_category_id])
           @blog_category_id=params[:blog_category_id].to_i
           @blogs = Blog.where(:blog_category_id=>@blog_category_id).order('id desc').page(params[:page]).per(10)          

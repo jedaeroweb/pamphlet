@@ -1,8 +1,7 @@
 class Notice < ActiveRecord::Base
   is_impressionable
+  has_rich_text :content
   validates_presence_of :title
-  validates_length_of :title, :minimum => 4, :maximum => 60, :allow_blank => true  
+  validates_length_of :title, minimum: 4, maximum: 60
   belongs_to :user, :autosave=>true
-  has_one :notice_content, :foreign_key => :id, :dependent => :destroy
-  accepts_nested_attributes_for :notice_content, :allow_destroy => true
 end
