@@ -1,3 +1,40 @@
-<footer id="footer">
-	
+<footer>
+  <div class="container">
+    <ul class="row">
+      <li class="col-6">
+      <address >
+        &nbsp;&nbsp; Copyright ⓒ. 2022, <%=t(:company) %>. All Right Reserved.
+      </address>
+      </li>
+  <li class="col-6">
+    <%= link_to '#', { class: 'dropdown-toggle d-flex align-items-center gap-2',
+                       role: "button",
+                       'data-bs-toggle': "dropdown",
+                       'aria-expanded': "false" } do %>
+      <span><%=t(:theme) %></span>
+      <span class="current-theme-icon"></span>
+    <% end %>
+    <ul class="dropdown-menu">
+      <li>
+        <button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="light">
+          <span class="icon">☀️</span>
+          <%=t(:light) %>
+        </button>
+      </li>
+      <li>
+        <button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="dark">
+          <span class="icon">🌙</span>
+          <%=t(:dark) %>
+        </button>
+      </li>
+      <li>
+        <button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="auto">
+          <span class="icon">🌓</span>
+          <%=t(:auto) %>
+        </button>
+      </li>
+    </ul>
+  </li>
+    </ul>
+  </div>
 </footer>

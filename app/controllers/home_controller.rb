@@ -8,7 +8,7 @@ class HomeController < ApplicationController
 
   def index
     @notices = Notice.order('id desc').page(params[:page]).per(5)
-    @galleries = Gallery.order('id desc').page(params[:page]).per(20)
+    @galleries = Gallery.order('id desc').page(params[:page]).per(6)
     @blogs = Blog.order('id desc').where('photo IS NOT NULL').page(params[:page]).per(6)
   end
 

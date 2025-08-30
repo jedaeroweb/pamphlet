@@ -545,7 +545,7 @@ DEPENDENCIES
   mysql2
   nokogiri (>= 1.18.9)
   puma (>= 5.0)
-  rails (~> 7.1.5, >= 7.1.5.1)
+  rails (~> 7.1.5)
   rails-letsencrypt
   recaptcha
   redis (~> 5.0)

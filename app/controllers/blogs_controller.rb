@@ -40,13 +40,8 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
-   @blog_comments=@blog.blog_comment.order('id desc').page(params[:page]).per(10)
-   @blog_comment=BlogComment.new
-   
-   
    @meta_keywords=@blog.tag_list+','+t(:meta_keywords)
    @title=@blog.title
-   @script="board/show"
     
     respond_to do |format|
       format.html # show.html.erb
@@ -61,14 +56,11 @@ class BlogsController < ApplicationController
     if(params[:blog_category_id])
       @blog_category_id=params[:blog_category_id]
     end
-    
-    @script="board/new"
   end
 
   # GET /blogs/1/edit
   def edit
     @blog_category_id=@blog.blog_category_id
-    @script="board/edit"
   end
 
   # POST /blogs
@@ -76,8 +68,6 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.new(blog_params)
     @blog.user_id=current_user.id
-       
-    @script="board/new" 
 
     respond_to do |format|
       if @blog.save       
@@ -93,8 +83,6 @@ class BlogsController < ApplicationController
   # PATCH/PUT /blogs/1
   # PATCH/PUT /blogs/1.json
   def update
-    @script="board/edit"   
-  
     respond_to do |format|
       if @blog.update(blog_params)     
         format.html { redirect_to @blog, notice: @controller_name +t(:message_success_update)}

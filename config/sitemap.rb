@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://www.sleepinglion.pe.kr"
+SitemapGenerator::Sitemap.default_host = "https://pamphlet.jedaeroweb.co.kr"
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
