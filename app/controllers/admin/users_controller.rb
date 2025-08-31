@@ -31,6 +31,11 @@ class Admin::UsersController < Admin::AdminController
       @user_count = User.where(condition).count
       @users = User.select('users.*').where(condition).page(params[:page]).per(params[:per_page]).order('id desc')
     end
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @users.as_json(only: [:id, :nickname, :email]) }
+    end
   end
 
   # GET /Users/1

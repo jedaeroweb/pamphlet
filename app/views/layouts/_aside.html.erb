@@ -1,4 +1,4 @@
-<aside class="visible-lg col-lg-3">
+<aside class="visible-lg col-lg-3  <% if current_page?(root_path) %>  mt-3 mt-lg-4 mt-xl-5 <% end %>">
   <%= render :partial => 'intro/aside' %>
   <%= render :partial => 'blog_categories/aside' %>
 	<% unless @tags.empty? %>

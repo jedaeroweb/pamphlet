@@ -34,7 +34,7 @@
 			<%= render 'layouts/page_header' %>
 		<% end  %>
 		<div class="row">
-			<main <% if current_page?(root_path) %>id="main_main"<% end %> class="sub-main<% if session[:no_aside] %> col-12<% else %> col-12 col-xl-9<% end %>">
+			<main class="sub-main  <% if current_page?(root_path) %>  mt-3 mt-lg-4 mt-xl-5 <% end %>  <% if session[:no_aside] %> col-12<% else %> col-12 col-xl-9 <% end %>">
 				<%= render 'layouts/ad' %>
 				<%=yield %>
 			</main>

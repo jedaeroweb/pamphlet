@@ -23,7 +23,6 @@ class Admin::NoticesController < Admin::AdminController
   # GET /notices/complete
   def new
     @notice = Notice.new
-    @notice.build_notice_content
   end
 
   # GET /notices/1/edit
@@ -40,8 +39,6 @@ class Admin::NoticesController < Admin::AdminController
         format.html { redirect_to [:admin, @notice], notice: t(:notice, scope: [:activerecord, :models])+t(:message_success_create) }
         format.json { render :show, status: :created, location: @notice }
       else
-        @notice.build_notice_content
-
         format.html { render action: 'new' }
         format.json { render json: @notice.errors, status: :unprocessable_entity }
       end

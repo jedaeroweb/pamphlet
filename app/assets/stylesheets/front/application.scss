@@ -77,24 +77,17 @@ article, aside, audio, canvas, command, datalist, details, embed, figcaption, fi
 mark, rp, rt, ruby, summary, time {display:inline;}
 
 /* layout */
-footer {clear:both;border-top:1px solid var(--bs-border-color);text-align: center}
+footer {clear:both;border-top:1px solid var(--bs-border-color);text-align: center; background-color: var(--bs-body-bg) }
 footer div {margin:0.3em 0 0}
 #mom {clear:both;float:left;width:100%;padding:0}
 .sub_main {padding-bottom:2rem;margin-bottom:2.5rem}
-.page-header {float:left;width:100%;margin:1rem 0;padding-bottom:7px;border-bottom:1px solid var(--bs-border-color)}
-.page-header h2 {float:left;margin-top:0.5rem;margin-bottom:0.5rem;font-weight:bold}
+.page-header {float:left;width:100%;margin:0 0 2%;padding-bottom:7px;border-bottom:1px solid #ccc}
+.page-header h2 {float:left;margin-top:10px;margin-bottom:0;font-weight:bold;color:#666}
 .page-header .breadcrumb  {float:right;margin:0;padding:0.5rem 1rem;background-color: $secondary-bg;border-radius:0.5rem }
 .alert-success {clear:both}
 #sl_ad {clear:both;margin-bottom:1.5rem}
 
-#tags {float:left;width:100%}
-#tags ul {margin:0;padding:0;list-style:none}
-#tags ul li {float:left;margin:0 10px}
-#sl_tag_cloud {position:relative;float:left;width:100%;margin-bottom:100px}
-.css1 { font-size: 15px; color:orange}
-.css2 { font-size: 20px; color:$default-color}
-.css3 { font-size: 30px; color:blue}
-.css4 { font-size: 45px; color:red}
+.red {color:red}
 
 /* Common Class */
 .arial {font-family:Arial}
@@ -102,7 +95,6 @@ footer div {margin:0.3em 0 0}
 .clear{clear:both}
 .none{display:none}
 .number {font-family:Arial;letter-spacing:0}
-.clear{clear:both}
 .none{display:none}
 .wrapper {margin:0 auto;width:728px}
 .ad_test {background:red}
@@ -135,8 +127,6 @@ header #top_menu li {float:left;margin:0 15px 0 0;padding:0}
 
 /* footer */
 footer {position:relative;padding-top:1em}
-footer form {position:absolute;top:10px;right:10px}
-
 #theme-selector {position: absolute; top:10px;right:10px}
 
 /* intro */
@@ -148,9 +138,9 @@ footer form {position:absolute;top:10px;right:10px}
 #sl_intro_index #sl_intro_right dd {float:left;margin:5px 0;width:200px}
 #sl_intro_index article {float:left;width:100%;margin-bottom:2em;line-height:150%}
 #sl_intro_index #main_content a {clear:both;display:block}
-#article_location_premium {position:relative;background:#fff}
+#article_location_premium {position:relative}
 #article_location_premium #smap2 {float:left;display:block}
-#article_location_premium div.fright {float:right;width:365px}
+#article_location_premium div.fright {float:right}
 #article_location_premium div.fright h3 {text-align:right}
 #article_location_premium div.fright h2 {margin:0 0 30px;padding:0;text-align:right}
 #article_location_premium div.fright ul {float:right;margin:0;padding:0;list-style:none}
@@ -160,8 +150,7 @@ footer form {position:absolute;top:10px;right:10px}
 #article_location_premium ul.images li img {float:right}
 #article_location_premium ul.images li.fleft img {float:left}
 #article_location_premium #smap {margin-bottom:20px;}
-#sl_intro_index article {background:var(--bs-body-bg)}
-#sl_intro_index article.b_red {background:red;padding:20px 20px 0}
+#sl_intro_index article.b_red {background:red}
 #sl_intro_index article.b_red div.left {float:left;margin:0 0 20px}
 #sl_intro_index article.b_red div.left h3 {font-size:20px;margin:0 0 10px;padding:0;color:yellow;font-weight:bold;text-align:justify}
 #sl_intro_index article.b_red div.left div {float:left;width:45%;padding:10px 20px;background:#ccc;border-radius:5px;min-height:50px;text-align:center}
@@ -343,40 +332,57 @@ a.left:active {background-position: -60px 0}
 
 .adsbygoogle {width:100%}
 
-@media all and (max-width: 767px) {
-    .container {width: 100%;max-width:none}
-    header {background:none;border-bottom:0;margin:0 0 2rem}
-	header h1 {font-size:1.6em}
-	header h1 a {display:block;background:none;text-indent:0;width:100%;font-weight:bold;text-align: center}
-	header h1 a:hover {text-decoration:none}
-	header h1 a:active {color:red}
-    header nav.col-12 {margin:0;padding:0}
-	header nav ul {width:100%;margin:2% 0 0;padding:0;border-radius:5px}
-	header nav ul li,header ul li a {clear:both;float:left;width:100%;text-align:left}
-	header nav ul.nav-pills > li + li {margin-left:0}
-	header nav ul li {margin:0;padding:0}
-	header nav ul li a {display:block;border-bottom:1px solid var(--bs-border-color);text-indent:1em;padding:10px;border-radius:0}
-	.nav-pills > li + li {margin:0}
-	#mom {float:left;clear:both;width:100%;margin:0}
-	#main {float:left;margin:0;padding-top:2%;padding-bottom:2%;width:100%;border-radius:5px}
-	#sl_main_gallery .carousel-inner a.m_nm {margin-right:0};
-    #sl_main_gallery .carousel-control-prev, #sl_main_gallery .carousel-control-next {display:none}
-	#sl_main_blog li {margin-bottom:10px}
-	#sl_main_blog li.m_nm {margin-right:0}
-	#main_main article ul {margin:0;padding:0;list-style:none}
-	#sl_intro_index #sl_intro_right {float:left;width:100%}
-	header nav ul a:hover {color:#000}
-	header nav ul a:active {color:red}
-	.page-header {float:left;margin-top:0;margin-bottom:10px}
-	#sl_intro_index #sl_intro_right, #sl_gallery_index #sl_gallery_right {width:100%;margin:0}
-	#sl_intro_index #sl_intro_left {width:100%}
 
-	footer {border-radius:5px;width:100%;margin:1% 0;border:none}
+
+
+.form-group {
+  margin-bottom:1.5rem
+}
+
+@media all and (max-width: 767px) {
+  body {background:#eee}
+  .container {width: 100%;max-width:none}
+  header {background:none;border-bottom:0;margin:1% 0}
+  header h1 {margin:0;padding:0;font-size:1.6em}
+  header h1 a {float:left;background:none;text-indent:0;width:100%;font-weight:bold;margin:10px;}
+  header h1 a:hover {text-decoration:none}
+  header h1 a:active {color:red}
+  header nav  {margin:0;padding:0;background:#fff}
+  header nav ul {width:100%;margin:2% 0 0;padding:0;border-radius:5px}
+  header nav ul li,header ul li a {clear:both;float:left;width:100%;text-align:left}
+  header nav ul.nav-pills > li + li {margin-left:0}
+  header nav ul li {margin:0;padding:0}
+  header nav ul li a {display:block;border-bottom:1px solid #f3f3f3;text-indent:1em;padding:10px;border-radius:5px}
+  header nav ul li a:hover {text-decoration:none;background:#eee}
+  header nav ul li a:active {color:red}
+  header nav ul li a .glyphicon {margin-right:1em}
+  .nav-pills > li + li {margin:0}
+  #mom {float:left;clear:both;width:100%;margin:0}
+  #main {float:left;margin:0;padding-top:2%;padding-bottom:2%;width:100%;border-radius:5px}
+  #sl_main_gallery .carousel-inner a.m_nm {margin-right:0}
+  #sl_main_blog li {margin-bottom:10px}
+  #sl_main_blog li.m_nm {margin-right:0}
+  #main-main article ul {margin:0;padding:0;list-style:none}
+  #sl_intro_index #sl_intro_right {float:left;width:100%}
+  header nav ul a:hover {color:#000}
+  header nav ul a:active {color:red}
+  .page-header {float:left;margin-top:0;margin-bottom:10px}
+  #sl_intro_index #sl_intro_right, #sl_gallery_index #sl_gallery_right {width:100%;margin:0}
+  #sl_intro_index #sl_intro_left {width:100%}
+  footer {border-radius:5px;margin:1% 0}
+}
+
+@media all and (min-width: 768px) and (max-width: 1199px) {
+  header {height:8em;background:#f8f8f8}
+  header h1 {margin:0.5em 0 0;padding:0;}
+  header nav ul li:first-child {margin-left:0}
+  footer {height:5em;}
+  #mom {margin:-8em 0 -5em;min-height:100%}
+  #main {padding-top:8em;padding-bottom:5em}
 }
 
 @media all and (min-width: 992px) {
   html,body {font-size:14px}
-  #sl_intro_index #sl_intro_left {padding-left:0}
 }
 
 @media (min-width: 576px) and (max-width: 991px) {
@@ -384,104 +390,77 @@ a.left:active {background-position: -60px 0}
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-  header {height:7em}
+  header {height:7em;background:#f8f8f8;}
   #mom {clear:both;float:left;width:100%;padding:0}
-  #mom {margin:-7em 0 -3em;min-height:100%}
-  #main {padding-top:7em;padding-bottom:3em}
-  #sub_main {margin-top:1em;margin-bottom:2em}
+  #mom {margin:-7em 0 -4rem;min-height:100%}
+  #main {padding-top:7em;padding-bottom:4rem}
+  .sub-main {padding-bottom:2em}
   #top-menu nav ul li.nav-item {display:block;width:20%;margin:0;padding:0}
   #top-menu { height: 92px;}
 }
 
 @media (min-width: 1200px) {
+  .container {max-width: none }
   html,body {font-size:16px}
-  header {height:6em}
+
+  header {height:6em;background:#fff}
   aside .box {margin-top:0}
-  .container {max-width: none}
-  footer {height:5em}
-  #mom {margin:-6em 0 -5em;min-height:100%}
-  #main {padding-top:6em;padding-bottom:5em}
+  footer {height:4rem;margin-left: 3%;margin-right:3%;background:none !important;}
+  footer address {line-height:180%}
+  #mom {margin:-6em 0 -4rem;min-height:100%}
+  #main {padding-top:6em;padding-bottom:4rem}
   .adsbygoogle {height: 100px}
+
   .sl_gallery ol.nav-tabs {margin-bottom:20px}
 
-	/* tag */
-	.sl_content_tags h4 {float:left;margin:0 5px;padding:0;line-height:150%}
-	.sl_content_tags h4:after {content:' :'}
-	.sl_content_tags ul {float:left;margin:0;padding:0}
-	.sl_content_tags ul li {float:left;margin:0 0 0 5px;padding:0;list-style:none;line-height:150%}
-	.sl_content_tags ul li:after {content:','}
-	.sl_content_tags ul li:last-child:after {content:none}
-
-    .top-menu {
-        z-index: 1015;
-        position:absolute;
-        bottom:0;
-        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14);
-    }
-
-    #mom {clear:both;float:left;width:100%;padding:0}
-    #main {padding-top:7em;padding-bottom:3em}
-    #sub_main {margin-top:1em;margin-bottom:2em}
-    .top-menu { height: 46px;}
+  .top-menu {
+    z-index: 1015;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14);
+  }
+  .sub-main {padding-bottom:2.5em}
+  .top-menu { height: 46px;}
+  .container {width:1150px;}
 }
 
-  @media (min-width: 1400px) {
-
-  }
-
-  @media (min-width: 1200px) and (max-width: 1500px) {
-    #users .right_a nav .nav-item {width:16%;text-align:center;margin:0 5px 5px 0}
-  }
-
-  @media (min-width: 1500px) {
-    .adsbygoogle {height: 140px}
-    .container {width:1450px}
-    header nav ul {margin-top:2rem}
-  }
-
-.form-group {
-  margin-bottom:1.5rem
+@media (min-width: 1400px) {
+  header nav a.nav-link {font-size:18px}
+  .container {width:1350px;}
 }
 
+@media (min-width: 1200px) and (max-width: 1500px) {
+  #users .right_a nav .nav-item {width:16%;text-align:center;margin:0 5px 5px 0}
+}
+
+@media (min-width: 1500px) {
+  .adsbygoogle {height: 140px}
+  .container {width:1450px}
+  header nav a.nav-link {font-size:20px}
+  .sub-main {padding-bottom:3em}
+}
 @include color-mode(dark) {
   body {
     color: var(--bs-body-color);
     background-color: var(--bs-body-bg);
   }
 
-  #faqList dt.on a {background:#ccc}
   .page-header h1, .page-header h2 {color: var(--bs-body-color)}
-  header,.jumbotron,.media,.card-body,aside article,#faqList dt a.title,.modal-body, .modal-footer,.sl_content_header,.thead-default th,.box_header,.box_content,#faqList dd,#sl_blog_index .media,.page-header .breadcrumb  {background-color:var(--bs-secondary-bg)}
-  .box_header {
-    background: #666;
-    border-color: var(--bs-border-color);
-  }
+  header,.jumbotron,.media,.card-body,aside article,#faqList dt a.title,.modal-body, .modal-footer,.sl_content_header,.thead-default th,.breadcrumb,.box_content,.card {background-color:var(--bs-secondary-bg)}
+  .box_header , .section-header h2,#no-sns-id-l {border-color:var(--bs-border-color)}
+  .box_header {background: #666;}
   .box_header h2 {text-shadow: none;color:#ccc}
-  .box_content {box-shadow: none}
-  .carousel .carousel-control-prev-icon, .carousel .carousel-control-next-icon, .carousel .carousel-control-prev-icon, .carousel .carousel-control-next-icon {filter:none}
-  header nav .active a {color:lightskyblue}
-  #sl_content_bottom_menu,#sl_intro_index article h2 {border-color:var(--bs-border-color)}
+  header nav .active > a.main-menu {color:#0cf}
   footer {color:#666;border-top-color:#333}
 }
 
 @include color-mode(light) {
-  a {
-    color: #666
-  }
-  a:hover {
-    color: #333
-  }
-  a:visited {
-    color: #999
-  }
-  a:active {
-    color: #000
-  }
-
-  header,footer {background-color: #eee}
-  header a,  header a:visited {color:#666}
-  header nav .active a,header nav .active a:visited {font-weight:bold;color:#333}
-  .page-header h2 {color:#666}
-  a.btn-primary,a.btn-primary:visited {color:#fff}
-
+  header {background: #fff}
+  footer {color:#666;border-top-color:#ddd}
+  .nav-link.disabled {color:#eee}
+  .sl_content_header,.sl_content_main,.media {background-color:#fff}
+  .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link,.nav-tabs {border-color:#ccc}
+  .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {border-bottom-color:#f1f1f1}
+  a.btn-primary,a.btn-primary:visited {color:#ccc}
 }

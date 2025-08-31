@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "esbuild": "^0.25.9"
+  },
+  "scripts": {
+  "build:css": "esbuild app/assets/stylesheets/application.scss --bundle --outdir=app/assets/builds",
+  "build:css:watch": "yarn build:css --watch"
+}
+}
