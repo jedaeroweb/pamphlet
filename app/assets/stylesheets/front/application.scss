@@ -67,11 +67,6 @@ legend {display:none}
 a img {border:none}
 a {text-decoration: none}
 
-h1 {font-size :180%}
-h2 {font-size :150%}
-h3 {font-size :130%}
-h4,h5,h6 {font-size : 110%}
-
 /* Getting the new tags to behave */
 article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video {display:block;}
 mark, rp, rt, ruby, summary, time {display:inline;}
@@ -104,7 +99,7 @@ footer div {margin:0.3em 0 0}
 
 /* header */
 header {position:relative;border-bottom:1px solid var(--bs-border-color)}
-header h1 a {display:block;margin:1.2em 0 0;padding:0;font-family:"Serif";vertical-align:top}
+header h1 a {display:block;margin:1.3rem 0 0;padding:0;font-family:"Serif";vertical-align:top}
 header h1 a:hover {text-decoration:none}
 header h1 a:active {color:red}
 header h1 a .red {margin-right:5px;color:red}
@@ -150,7 +145,7 @@ footer {position:relative;padding-top:1em}
 #article_location_premium ul.images li img {float:right}
 #article_location_premium ul.images li.fleft img {float:left}
 #article_location_premium #smap {margin-bottom:20px;}
-#sl_intro_index article.b_red {background:red}
+#sl_intro_index article.b_red {background:red;color:#333}
 #sl_intro_index article.b_red div.left {float:left;margin:0 0 20px}
 #sl_intro_index article.b_red div.left h3 {font-size:20px;margin:0 0 10px;padding:0;color:yellow;font-weight:bold;text-align:justify}
 #sl_intro_index article.b_red div.left div {float:left;width:45%;padding:10px 20px;background:#ccc;border-radius:5px;min-height:50px;text-align:center}
@@ -159,13 +154,13 @@ footer {position:relative;padding-top:1em}
 #sl_intro_index article.b_red div.left div.r {float:right}
 #sl_intro_index article.b_red div.right {background:#fff;border-radius:5px;margin:0 0 20px;padding:20px;height:100%;text-align:center}
 #sl_intro_index article.b_red div.right a {font-size:24px}
-#sl_intro_index article.b_gray {background:#eee;padding:20px}
+#sl_intro_index article.b_gray {background:#eee;padding:20px;color:#333}
 #sl_intro_index article.b_gray h3 {margin:0 0 10px;padding:0;font-weight:bold}
 #sl_intro_index dl {margin:10px 0 0;padding:0}
 #sl_intro_index dl dt {margin:0;padding:0}
 #sl_intro_index dl dd {margin:0 0 10px 10px;padding:0}
 #sl_intro_index .article1 {position:relative;}
-#sl_intro_index .article1 h1 {margin:0;padding:3% 5%;background:url("ruby_back.png");font-weight:bold;font-size:28px;line-height:160%;color:#fff}
+#sl_intro_index .article1 h1 {margin:0;padding:3% 5%;font-weight:bold;line-height:160%;color:#fff}
 #sl_intro_index .article1 h1 .yellow {color:yellow}
 #sl_intro_index .article1 #com {position:absolute;top:10px;right:10px;color:#fff;font-weight:bold}
 #sl_intro_index .article2 table {margin:20px 0 0;width:100%;border-collapse:collapse}
@@ -463,4 +458,6 @@ a.left:active {background-position: -60px 0}
   .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link,.nav-tabs {border-color:#ccc}
   .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {border-bottom-color:#f1f1f1}
   a.btn-primary,a.btn-primary:visited {color:#ccc}
+
+  #sl_intro_index .article1 h1 {color:#333}
 }

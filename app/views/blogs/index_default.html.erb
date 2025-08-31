@@ -17,7 +17,7 @@
   <section id="sl_blog" <% unless @blogs.empty? %>itemscope itemprop="blogPosts" itemtype="http://schema.org/Blog"<% end %>>
   <% unless @blogs.empty? %>
   <% @blogs.each do |blog| %>
-  <article class="media" itemscope itemprop="blogPost" itemtype="http://schema.org/Blog">
+  <article class="media rounded-3 rounded-lg-4" itemscope itemprop="blogPost" itemtype="http://schema.org/Blog">
     <%=link_to blog_path(blog),:class=>"pull-left" do %>
     <% if blog.photo? %>
       <%=image_tag blog.photo.small_thumb, :class=>"media-object",:itemprop=>"thumbnailUrl",:alt=>"..." %>
