@@ -12,6 +12,7 @@
         <colgroup>
           <col style="width:120px">
           <col>
+          <col>
           <col style="width:200px">
           <% if can?(:update, Notice) || can?(:delete, Notice) %>
             <col<%=manage_width(Notice) %>>
@@ -21,6 +22,7 @@
         <tr>
           <th class="text-center"><%= t(:enable,scope:[:activerecord,:attributes,:notice]) %></th>
           <th><%= t(:title,scope:[:activerecord,:attributes,:notice]) %></th>
+          <th><%= t(:count,scope:[:activerecord,:attributes,:notice]) %></th>
           <th class="text-right"><%= t(:created_at,scope:[:activerecord,:attributes,:notice]) %></th>
           <% if can?(:update, Notice) || can?(:delete, Notice) %>
             <th class="text-center"><%= t(:manage) %></th>
