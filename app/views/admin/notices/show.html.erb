@@ -1,23 +1,29 @@
-<% if notice %>
-<%= render :partial => 'layouts/notice',:locals=>{:notice=>notice} %>
-<% end %>
-<section id="admin_notice_show">
-	<div class="slboard_content">
-		<div class="sl_content_header">
-			<h3><%= @admin_notice.title %></h3>
-			<p>작성자 :<%= @admin_notice.user.name %>&nbsp;&nbsp;&nbsp; 작성일 : <%= @admin_notice.created_at %></p>
-		</div>
-		<div class="sl_content_main">
-			<div class="sl_content_text">  <%= simple_format(@admin_notice.notice_content.content) %></div>
-		</div>
-	</div>
-	<div id="sl_bottom_menu">
-		<% if user_signed_in? %>
-		<% if current_user.admin? %>
-		<%= link_to '글쓰기', new_admin_notice_path %>
-		<%= link_to '글수정', edit_admin_notice_path(@admin_notice) %>
-		<% end %>
-		<% end %>		
-		<%= link_to '목록으로',admin_notices_path %>
-	</div>
+<section id="show-notice" class="col-12">
+  <div class="row">
+    <%= render :partial => 'layouts/notice', :locals => {:notice => notice, :alert => alert } %>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <article class="card">
+        <h3 class="card-header"><%=@notice.title %></h3>
+        <div class="card-body">
+          <dl>
+            <dt><%= t(:created_at, scope: [:activerecord, :attributes, :product]) %></dt>
+            <dd><%= I18n.l @notice.created_at.to_date, :format => :long %></dd>
+            <dt><%= t(:updated_at, scope: [:activerecord, :attributes, :product]) %></dt>
+            <dd><%= I18n.l @notice.updated_at.to_date, :format => :long %></dd>
+          </dl>
+        </div>
+      </article>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-xl-6">
+      <%= link_to t(:link_list), admin_notices_path, class: 'btn btn-secondary' %>
+    </div>
+    <div class="col-12 col-xl-6 text-right">
+      <%= link_to t(:edit), edit_admin_notice_path(@notice), class: 'btn btn-secondary' %>
+      <%= link_to t(:delete), admin_notice_path(@notice), :method => :delete, :data => { :confirm => t(:delete_confirm) }, class: 'btn btn-danger' %>
+    </div>
+  </div>
 </section>

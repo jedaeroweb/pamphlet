@@ -1,0 +1,6 @@
+<aside class="col-12 col-lg-5 col-xl-4 col-xxl-3">
+  <%= render :partial => 'admin/admins/profile' %>
+  <%= render :partial => 'admin/admins/list' %>
+  <%= paginate @admins %>
+  <%=link_to t(:add),new_admin_admin_path,class: 'btn btn-primary' %>
+</aside>

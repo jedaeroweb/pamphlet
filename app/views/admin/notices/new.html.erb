@@ -1,4 +1,10 @@
-<section id="admin_notice_new">
-  <%= render 'form' %>
-  <%= link_to t(:link_list), admin_notices_path %>
+<section id="new-notice" class="col-12">
+  <div class="row">
+    <h2 class="col-12"><%= t(:new_notice) %></h2>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <%= render 'form', notice: @notice %>
+    </div>
+  </div>
 </section>

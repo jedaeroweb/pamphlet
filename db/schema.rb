@@ -49,6 +49,24 @@ ActiveRecord::Schema[7.1].define(version: 2022_08_29_171007) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "admin_login_logs", force: :cascade do |t|
+    t.integer "admin_id", null: false
+    t.integer "client_ip", limit: 8, null: false
+    t.boolean "enable", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["admin_id"], name: "index_admin_login_logs_on_admin_id"
+  end
+
+  create_table "admin_pictures", force: :cascade do |t|
+    t.integer "admin_id", null: false
+    t.string "picture", null: false
+    t.boolean "enable", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["admin_id"], name: "index_admin_pictures_on_admin_id"
+  end
+
   create_table "admins", force: :cascade do |t|
     t.string "email", limit: 100, null: false
     t.string "name", limit: 100, null: false

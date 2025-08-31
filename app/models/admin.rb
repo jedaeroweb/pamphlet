@@ -1,5 +1,5 @@
 class Admin < ActiveRecord::Base
-  devise :database_authenticatable, :registerable, :trackable, :validatable, :timeoutable
+  devise :database_authenticatable, :registerable, :trackable, :validatable, :timeoutable, :rememberable
 
   has_one :admin_picture, dependent: :destroy
   has_one :role_admin

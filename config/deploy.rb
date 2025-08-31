@@ -18,6 +18,8 @@ set :bundle_path, '/usr/local/bundle'
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 set :keep_releases, 5
 
+after 'bundler:install', 'rbenv:rehash'
+
 namespace :deploy do
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do

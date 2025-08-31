@@ -3,5 +3,6 @@ import "@hotwired/turbo-rails"
 import "rails-ujs"
 import "trix"
 import "@rails/actiontext"
+import * as bootstrap from 'bootstrap';
 import 'common'
 import "controllers"
