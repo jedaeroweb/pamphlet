@@ -1,16 +1,6 @@
-# encoding: utf-8
-
 class HistoriesController < ApplicationController
   before_action :authenticate_user!, :except => [:index,:show]  
   before_action :set_history, only: [:show, :edit, :update, :destroy]
-  
-  def initialize(*params)
-    super(*params)   
-    @controller_name=t('activerecord.models.history')
-    
-    @title=t('activerecord.models.history')+t(:title_separator)+t(:application_name)    
-    @meta_description=t(:meta_description_history)    
-  end   
   
   # GET /histories
   # GET /histories.json

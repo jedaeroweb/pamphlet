@@ -20,13 +20,13 @@
 						<ul class="dropdown-menu">
 							<li
 								<% if current_page?(intro_index_path) %> class="active"
-								<% end %>><%=link_to intro_index_path do %><%=t('activerecord.models.intro') %><% end %></li>
+								<% end %>><%=link_to intro_index_path,class:'main-menu' do %><%=t('activerecord.models.intro') %><% end %></li>
 							<li
 								<% if current_page?(locations_path) %> class="active"
-								<% end %>><%=link_to locations_path do %><%=t('activerecord.models.location') %><% end %></li>
+								<% end %>><%=link_to locations_path,class:'main-menu' do %><%=t('activerecord.models.location') %><% end %></li>
 							<li
 								<% if current_page?(histories_path) %> class="active"
-								<% end %>><%=link_to histories_path do %><%=t('activerecord.models.history') %><% end %></li>
+								<% end %>><%=link_to histories_path,class:'main-menu' do %><%=t('activerecord.models.history') %><% end %></li>
 						</ul>
 						</li>
 						<li <% if params[:controller]=='contacts' %>class="active"<% end %>>

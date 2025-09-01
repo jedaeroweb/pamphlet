@@ -1,14 +1,6 @@
-class GalleriesController < BoardController
+class GalleriesController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :show]
   before_action :set_gallery, only: [:show, :edit, :update, :destroy]
-
-  def initialize(*params)
-    super(*params)
-    @controller_name = t('activerecord.models.gallery')
-    @title = t('activerecord.models.gallery')
-    @meta_description = t(:meta_description_gallery)
-    @page_itemtype = "http://schema.org/ImageGallery"
-  end
 
   # GET /galleries
   # GET /galleries.json

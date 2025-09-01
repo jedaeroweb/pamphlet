@@ -1,13 +1,7 @@
-# encoding: utf-8
-
-class ContactsController < BoardController
+class ContactsController < ApplicationController
   before_action :authenticate_user!, :except => [:new,:complete,:create, :show]
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
 
-  def initialize(*params)
-    super(*params)
-    @controller_name=t('activerecord.models.contact')
-  end
   
   def complete
   end  

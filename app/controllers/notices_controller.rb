@@ -2,6 +2,7 @@ class NoticesController < ApplicationController
   #impressionist :actions => [:show]
   before_action :set_notice, only: [:show]
 
+
   # GET /notices
   # GET /notices.json
   def index

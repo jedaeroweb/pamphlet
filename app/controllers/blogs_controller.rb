@@ -3,13 +3,6 @@ class BlogsController < ApplicationController
   before_action :authenticate_user!, :except => [:index,:show]
   before_action :set_blog, only: [:show, :edit, :update, :destroy,:upvote, :downvote]
 
-  def initialize(*params)
-    super(*params)
-    @controller_name = t('activerecord.models.blog')
-    @title = t('activerecord.models.blog')
-    @meta_description = t(:meta_description_blog)
-  end
-
   # GET /blogs
   # GET /blogs.json
   def index

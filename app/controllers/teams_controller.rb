@@ -1,16 +1,5 @@
-# encoding: utf-8
-
 class TeamsController < ApplicationController
-  before_action :authenticate_user!, :except => [:index,:show] 
-
-  def initialize(*params)
-    super(*params)
-        
-    @controller_name=t('activerecord.models.team')
-    
-    @title=t('activerecord.models.team')+t(:title_separator)+t(:application_name)    
-    @meta_description=t(:meta_description_team)
-  end
+  before_action :authenticate_user!, :except => [:index,:show]
   
   # GET /intro
   # GET /intro.json  

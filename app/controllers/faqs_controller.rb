@@ -1,13 +1,6 @@
 class FaqsController < ApplicationController
   before_action :set_faq, only: [:show]
 
-  def initialize(*params)
-    super(*params)
-    @controller_name=t('activerecord.models.faq')
-    @title=t('activerecord.models.faq')
-    @meta_description=t(:eta_description_faq)
-    @page_itemtype="http://schema.org/FAQPage"
-  end
   # GET /faqs
   # GET /faqs.json
   def index

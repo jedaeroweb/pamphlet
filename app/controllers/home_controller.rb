@@ -1,11 +1,4 @@
-# encoding: utf-8
-
 class HomeController < ApplicationController
-  def initialize(*params)
-    super(*params)
-    @script='home'
-  end
-
   def index
     condition = { enable: true }
 

@@ -2,10 +2,6 @@ class BlogCategoryController < ApplicationController
   before_action :authenticate_user!, :except => [:index,:show]
   before_action :set_blog_category, only: [:show, :edit, :update, :destroy]
 
-  def initialize
-    super
-    @controller_name=t('activerecord.models.notice')
-  end
 
   # GET /blog_categories
   # GET /blog_categories.json
