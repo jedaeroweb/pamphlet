@@ -7,9 +7,12 @@ class HomeController < ApplicationController
   end
 
   def index
+    condition = { enable: true }
+
     @notices = Notice.order('id desc').page(params[:page]).per(5)
     @galleries = Gallery.order('id desc').page(params[:page]).per(6)
-    @blogs = Blog.order('id desc').where('photo IS NOT NULL').page(params[:page]).per(6)
+    @blog_count = Blog.where(condition).count
+    @blogs = Blog.where(condition).page(0).per(6).order('id desc')
   end
 
   def demo

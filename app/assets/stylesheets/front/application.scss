@@ -189,7 +189,7 @@ footer {position:relative;padding-top:1em}
 #gallery_main_content {margin:0 0 20px}
 #sl_gallery_left {float:left;position:relative;overflow:hidden}
 #sl_gallery_left figure {position:relative;overflow: hidden}
-#sl_gallery_left figure figcaption {position:absolute;display:block;bottom:0px;padding:5px 0;margin:0;text-align:center;color:#fff;width:100%;max-width:400px;background:#333;opacity:0.8}
+#sl_gallery_left figure figcaption {position:absolute;display:block;bottom:0px;padding:5px 0;margin:0;text-align:center;color:#fff;width:100%;background:#333;opacity:0.8}
 #sl_gallery_right h4 {margin:0 0 10px;padding:0}
 #sl_gallery_right div.text {margin:0 0 20px;line-height:170%}
 #sl_gallery_right div.text p {margin:0;padding:0}
@@ -206,6 +206,13 @@ footer {position:relative;padding-top:1em}
 #sl_main_gallery .carousel-indicators .active {background:#666}
 
 /* blog */
+
+.table figure {margin-bottom:0}
+
+.type-selector {text-align: right;list-style: none}
+.type-selector li {display:inline-block}
+.type-selector li a span {font-size:30px}
+
 #sl_blog_index {float:left;width:100%;margin:10px 0}
 #sl_blog_index ol.nav-tabs {margin:0 0 10px}
 #sl_blog {float:left;width:100%;margin:20px 0}
@@ -460,4 +467,5 @@ a.left:active {background-position: -60px 0}
   a.btn-primary,a.btn-primary:visited {color:#ccc}
 
   #sl_intro_index .article1 h1 {color:#333}
+  #sl_intro_index .article1 h1 .yellow {color:red}
 }

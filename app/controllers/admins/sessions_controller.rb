@@ -2,21 +2,31 @@ class Admins::SessionsController < Devise::SessionsController
   layout 'admin/login'
 
   def create
-    super
+    self.resource = warden.authenticate!(auth_options)
 
-    require 'ipaddr'
-    AdminLoginLog.create!(admin_id: current_admin.id, client_ip: IPAddr.new(request.remote_ip).to_i)
-  end
-
-  def after_sign_in_path_for(_resource)
-    admin_path
-  end
-
-  def after_sign_out_path_for(_resource_or_scope)
-    if Rails.application.config.i18n.default_locale==I18n.locale
-      new_admin_session_path()
+    if resource && resource.admin?
+      sign_in(resource_name, resource)
+      yield resource if block_given?
+      respond_with resource, location: after_sign_in_path_for(resource)
     else
-      new_admin_session_path(:locale=>I18n.locale)
+      flash[:alert] = "관리자 권한이 없습니다."
+      sign_out(resource)
+      redirect_to new_admin_session_path
     end
   end
+
+  def after_sign_in_path_for(resource)
+    if resource.admin?
+      admin_root_path
+    else
+      flash[:alert] = "관리자 권한이 없습니다."
+      sign_out(resource)
+      new_admin_session_path
+    end
+  end
+
+  def after_sign_out_path_for(_resource)
+    new_admin_session_path
+  end
+
 end

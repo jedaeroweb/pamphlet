@@ -1,24 +1,21 @@
-# encoding: utf-8
 class BlogCategoryController < ApplicationController
   before_action :authenticate_user!, :except => [:index,:show]
-  before_action :set_notice, only: [:show, :edit, :update, :destroy]
-  
+  before_action :set_blog_category, only: [:show, :edit, :update, :destroy]
+
   def initialize
     super
     @controller_name=t('activerecord.models.notice')
-    @style="board"
-    @script="board/index"
   end
 
   # GET /blog_categories
   # GET /blog_categories.json
   def index
     @blog_categories = BlogCategory.order(@menu_setting.order).page(params[:page]).per(@menu_setting.per)
-    
+
     respond_to do |format|
       format.html
       format.json { render json: @blog_categories }
-    end    
+    end
   end
 
   # GET /blog_categories/1

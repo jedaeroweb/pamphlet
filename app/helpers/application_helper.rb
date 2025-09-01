@@ -84,25 +84,7 @@ module ApplicationHelper
     end
   end
 
-  def display_payment_method(accounts)
-    payment_method = []
 
-    accounts.each do |account|
-      unless account.cash.zero?
-        payment_method.push(t(:cash));
-      end
-
-      unless account.credit.zero?
-        payment_method.push(t(:credit));
-      end
-
-      unless account.point.zero?
-        payment_method.push(t(:point));
-      end
-    end
-
-    return payment_method.uniq.join(',')
-  end
 
   def get_dt_format(date)
     return I18n.l date.to_date
@@ -131,18 +113,10 @@ module ApplicationHelper
   end
 
   def display_user_photo(current_user)
-    if current_user.user_pictures.present?
-      return image_tag(current_user.user_pictures[0].picture.tiny_thumb.url, { height: 30,width: 30,class: 'rounded-circle d-none d-lg-inline-block'})
+    if current_user.user_picture.present?
+      return image_tag(current_user.user_picture.picture.tiny_thumb.url, { height: 30,width: 30,class: 'rounded-circle d-none d-lg-inline-block'})
     else
       return raw('<i class="material-icons">person</i>');
-    end
-  end
-
-  def display_company_photo(current_company)
-    if current_company.company_pictures.present?
-      return image_tag(current_company.company_pictures[0].picture.tiny_thumb.url, { height: 30,width: 30,class: 'rounded-circle d-none d-lg-inline-block'})
-    else
-      return raw('<i class="material-icons">company</i>');
     end
   end
 end

@@ -41,4 +41,17 @@ class ApplicationController < ActionController::Base
       return 'application'
     end
   end
+  protected
+
+  def admin_signed_in?
+    user_signed_in? && current_user.admin?
+  end
+
+  def current_admin
+    @current_admin ||= current_user if user_signed_in? && current_user.admin?
+  end
+
+  helper_method :admin_signed_in?, :current_admin
+
+
 end

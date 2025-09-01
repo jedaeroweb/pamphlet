@@ -1,9 +1,14 @@
-class BlogUploader < CarrierWave::Uploader::Base
-  # Include RMagick or ImageScience support:
-  # include CarrierWave::RMagick
+class BlogPictureUploader < CarrierWave::Uploader::Base
+  # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
-  #include CarrierWave::WebP::Converter
-  # include CarrierWave::ImageScience
+  #include CarrierWave::MiniMagick
+
+  # Choose what kind of storage to use for this uploader:
+  if Rails.env.production?
+    storage :fog
+  else
+    storage :file
+  end
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -21,6 +26,8 @@ class BlogUploader < CarrierWave::Uploader::Base
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
 
+  # Process files as they are uploaded:
+  # process :scale => [200, 300]
   #
   def scale(width, height)
     # do something
@@ -28,21 +35,21 @@ class BlogUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :small_thumb do
-    process :resize_to_fill => [100, 100]
+    process resize_to_fill: [150, 150]
   end
 
   version :medium_thumb do
-    process :resize_to_fill => [200, 200]
+    process resize_to_fill: [300, 300]
   end
 
   version :large_thumb do
-    process :resize_to_fill => [400, 0]
+    process resize_to_fill: [800, 600]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_white_list
-  %w(jpg jpeg gif png)
+    %w(jpg jpeg gif png)
   end
 
   # Override the filename of the uploaded files:
@@ -50,5 +57,4 @@ class BlogUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-
 end

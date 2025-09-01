@@ -21,17 +21,17 @@
 </ol>
 <div id="sl-gallery" class="row" <% if gallery %>itemscope itemtype="http://schema.org/ImageObject"<% end %>  data-controller="hello">
 	<% if gallery %>
-		<div id="sl_gallery_left" class="col-12 col-lg-5">
+		<div id="sl_gallery_left" class="col-12 col-lg-7">
 			<%=link_to gallery.photo.to_s,{:title=>gallery.title,:class=>'simple_image'} do %>
 				<figure>
-					<%= image_tag sl_get_thumb(gallery.photo.to_s,'large'),:class=>'img-responsive',:itemprop=>"contentURL" %>
+					<%= image_tag sl_get_thumb(gallery.photo.to_s,'large'),:class=>'img-responsive w-100',:itemprop=>"contentURL" %>
 					<figcaption id="gallery<%= gallery.id %>_img<%= gallery.id %>_span" class="image_caption" itemprop="name">
 						<%= gallery.title %>
 					</figcaption>
 				</figure>
 			<% end %>
 		</div>
-		<div id="sl_gallery_right" class="col-12 col-lg-7">
+		<div id="sl_gallery_right" class="col-12 col-lg-5">
 			<div itemprop="description">
 				<%= simple_format gallery.content %>
 			</div>

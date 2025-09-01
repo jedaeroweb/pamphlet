@@ -1,27 +1,23 @@
-<% breadcrumb :blog, @blog %>
-<% if notice %>
-<%= render :partial => 'layouts/notice',:locals=>{:notice=>notice} %>
-<% end %>
-<section id="sl_blog_show" itemscope itemprop="blogPost" itemtype="http://schema.org/Blog">	
-	<div class="slboard_content">
-		<div class="sl_content_header box_header">
-			<h2 itemprop="name"><%= @blog.title %></h2>
-			<span class="none" itemprop="genre"><%=@blog.blog_category_id %></span>
-			<p>작성자 :  <%= render :partial => 'users/data', :locals => { :user => @blog.user, :itemprop => 'author' } %> &nbsp;&nbsp;&nbsp; <%=t(:label_created_at)%> : <span itemprop="dateCreated"><%= @blog.created_at %></span><span class="none" itemprop="dateModified"><%= @blog.updated_at %></span></p>			
-		</div>
-		<div class="sl_content_main">
-			<div class="sl_content_text" itemprop="text"><%= simple_format(@blog.content) %></div>
-		</div>
-	</div>
-	<% unless @blog.tags.count.zero? %>	
-	<p>
-	Tags: <%= raw @blog.tags.map { |t| link_to t, tag_path(:tag=>t.name) }.join(', ') %>
-	</p>
-	<% end %>
-	<div id="sl_content_bottom_menu">
-		<%= link_to t(:link_list),blogs_path %>
-		<% if user_signed_in? %>
-		&nbsp; | &nbsp; <%= link_to t(:link_edit), edit_blog_path(@blog) %> &nbsp; | &nbsp; <%= link_to t(:link_delete), @blog, method: :delete, data: { confirm: '정말로 삭제합니까?' } %>
-		<% end %>
-	</div>
-</section>
+<div id="show-blog">
+  <div class="row">
+    <article class="col-12 mb-3" itemscope itemprop="article" itemtype="http://schema.org/Article">
+      <div class="sl_content_header">
+        <h3 itemprop="name"><%= @blog.title %></h3>
+        <p class="text-end"><%= t(:created_at, scope: [:activerecord, :attributes, :blog]) %> : <%= I18n.l @blog.created_at.to_date, :format => :long %></p>
+      </div>
+      <div class="sl_content_main">
+        <div class="sl_content_text" itemprop="text"><%=simple_format sanitize(@blog.content.to_s.gsub(/\n/, '<br />'), :tags => %w(br img a)) %></div>
+
+      </div>
+    </article>
+  </div>
+  <div class="row">
+    <div class="col-12">
+    </div>
+  </div>
+  <div class="row">
+    <div class="btn-group btn-group-lg col-12" role="group" style="margin-top:3rem">
+      <%=link_to t(:link_list),blogs_path,{class: 'btn btn-secondary btn-large btn-block'} %>
+    </div>
+  </div>
+</div>

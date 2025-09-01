@@ -2,16 +2,17 @@ class Admin::AdminController < ApplicationController
   #load_and_authorize_resource except: [:create]
   load_and_authorize_resource
 
+
   def current_ability
-    @current_ability ||= AdminAbility.new(current_admin)
+    @current_ability ||= UserAbility.new(current_admin)
   end
 
   def resource_name
-    :admin
+    :user
   end
 
   def resource
-    @resource ||= Admin.new
+    @resource ||= User.new
   end
 
   def devise_mapping

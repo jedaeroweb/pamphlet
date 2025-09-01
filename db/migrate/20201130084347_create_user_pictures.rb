@@ -1,7 +1,7 @@
-class CreateAdminPictures < ActiveRecord::Migration[6.0]
+class CreateUserPictures < ActiveRecord::Migration[6.0]
   def change
-    create_table :admin_pictures do |t|
-      t.references :admin, null: false
+    create_table :user_pictures do |t|
+      t.references :user, null: false
       t.string :picture, null: false
       t.boolean :enable, null: false, default: true
       t.timestamps null: false

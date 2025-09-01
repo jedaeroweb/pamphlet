@@ -1,0 +1,30 @@
+<%
+  render_templete='index_default'
+
+  if session[:blog_list_type].present?
+    if session[:blog_list_type]=='list'
+      render_templete='index_list'
+    end
+  end
+
+%>
+<div id="blogs">
+  <div class="row">
+    <div class="col-12">
+      <ul class="type-selector">
+        <li><%=link_to url_for(list_type: 'list') do %><span class="material-icons">view_list</span><% end %></li>
+        <li><%=link_to url_for(list_type: 'module') do %><span class="material-icons">view_module</span><% end %></li>
+      </ul>
+    </div>
+    <div class="col-12">
+      <h2 class="float-start hidden-title"><%= t(:blog,scope: [:activerecord,:models]) %></h2>
+      <div class="float-end">
+        <p class="summary text-end">
+          <span id="list_count" style="display:none"><%= @blog_count %></span>
+          <%= raw t(:there_are_n_blogs, count: @blog_count) %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <%=render render_templete %>
+</div>

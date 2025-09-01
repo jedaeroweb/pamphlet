@@ -3,12 +3,31 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'home/demo', to: 'home#demo'
 
+  # Admin 인증 라우트
+  devise_for :admins,
+             class_name: 'User',
+             path: 'admins',
+             path_names: {
+               sign_in: 'login',
+               sign_out: 'logout'
+             },
+             controllers: {
+               sessions: 'admins/sessions'
+             }
 
-  devise_for :admins, :controllers => { :sessions => "admins/sessions",:registrations => "admins/registrations" }, :path_names =>  {:sign_up=>'new',:sign_in => 'login', :sign_out => 'logout'} do
-    get 'edit', :to => 'admins::Registrations#edit'
-    get 'login', :to => 'admins::Sessions#new'
-    get 'logout', :to=> 'admins::Sessions#destroy'
+  namespace :admin do
+    root to: 'home#index'
+
+    resources :contacts
+    resources :users
+    resources :blogs
+    resources :notices
+    resources :galleries
   end
+
+
+
+
 
 
   devise_for :users, :controllers => { :sessions => "users/sessions",:registrations => "users/registrations" }, :path_names =>  {:sign_up=>'new',:sign_in => 'login', :sign_out => 'logout'} do
@@ -38,17 +57,5 @@ Rails.application.routes.draw do
     end
   end
 
-
-  # 관리자
-  scope 'admin', module: 'admin', as: 'admin' do
-    get '/' => 'home#index'
-
-    resources :contacts
-    resources :users
-    resources :contacts
-    resources :blogs
-    resources :notices
-    resources :galleries
-  end
 
 end

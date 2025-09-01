@@ -1,37 +1,16 @@
 <header class="row">
   <div class="col-12">
-    <% if ['admin/ads','admin/biddings','admin/accepted_biddings'].include?(params[:controller]) %>
-    <%= render 'admin/ads/nav' %>
-    <% end %>
     <% if ['admin/blogs','admin/blog_categories'].include?(params[:controller]) %>
       <%= render 'admin/blogs/nav' %>
-    <% end %>
-    <% if ['admin/products','admin/product_categories'].include?(params[:controller]) %>
-      <%= render 'admin/products/nav' %>
-    <% end %>
-    <% if ['admin/orders','admin/payments'].include?(params[:controller]) %>
-      <%= render 'admin/orders/nav' %>
     <% end %>
     <% if ['admin/notices','admin/contacts','admin/questions','admin/answers','admin/faq_categories','admin/faqs','admin/reviews','admin/reservations'].include?(params[:controller]) %>
       <%= render 'admin/notices/nav' %>
     <% end %>
-    <% if ['admin/slides','admin/settings'].include?(params[:controller]) %>
-      <%= render 'admin/settings/nav' %>
-    <% end %>
-    <% if ['admin/users','admin/companies','admin/user_point_logs'].include?(params[:controller]) %>
-      <%= render 'admin/users/nav' %>
-    <% end %>
-    <% if ['admin/simulations','admin/simulation_pictures','admin/simulation_blueprints','admin/simulation_materials','admin/user_simulation_materials','admin/simulation_categories'].include?(params[:controller]) %>
-      <%= render 'admin/simulations/nav' %>
-    <% end %>
-    <% if ['admin/admins','admin/addresses','admin/specialities','admin/speciality_categories','admin/materials','admin/sizes','admin/address_levels','admin/charge_points'].include?(params[:controller]) %>
-      <%= render 'admin/admins/nav' %>
-    <% end %>
     <ul id="top-menu">
       <% if admin_signed_in? %>
         <li id="admin-info">
-            <% if current_admin.admin_picture.present? %>
-              <%= image_tag(current_admin.admin_picture.picture.small_thumb.url, { :height => 50, :width => 50 }) %>
+            <% if current_admin.user_picture.present? %>
+              <%= image_tag(current_admin.user_picture.picture.small_thumb.url, { :height => 50, :width => 50 }) %>
             <% end %>
             <span class="text-dark"><%= current_admin.name %></span>
         </li>

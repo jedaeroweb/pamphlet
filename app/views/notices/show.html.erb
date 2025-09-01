@@ -1,20 +1,20 @@
-<% breadcrumb :notice,@notice %>
-<% if notice %>
-<%= render :partial => 'layouts/notice',:locals=>{:notice=>notice} %>
-<% end %>
-<article id="sl_notice_show" itemscope itemprop="article" itemtype="http://schema.org/Article">
-  <div class="slboard_content">
-    <div class="sl_content_header">
-      <h3 itemprop="name"><%= @notice.title %></h3>
-      <p><%=t(:label_name)%> : <span  itemprop="author"><%=userName(@notice,10) %></span>&nbsp;&nbsp;&nbsp; <%=t(:label_created_at)%> : <span itemprop="dateCreated"><%= @notice.created_at %></span><span class="none" itemprop="dateModified"><%= @notice.updated_at %></span></p>
-    </div>
-    <div class="sl_content_main">
-      <div class="sl_content_text" itemprop="text"><%=simple_format @notice.content %></div>
-    </div>
+<div id="show-notice">
+  <div class="row">
+    <article class="col-12" itemscope itemprop="article" itemtype="http://schema.org/Article">
+      <div class="sl_content_header">
+        <h3 itemprop="name"><%= @notice.title %></h3>
+        <p class="text-end"><%= t(:created_at, scope: [:activerecord, :attributes, :notice]) %> : <%= I18n.l @notice.created_at.to_date, :format => :long %></p>
+      </div>
+      <div class="sl_content_main">
+        <div class="sl_content_text" itemprop="text"><%=simple_format sanitize(@notice.content.to_s.gsub(/\n/, '<br />'), :tags => %w(br img a)) %></div>
+      </div>
+    </article>
+  </div>
+  <div class="row">
   </div>
   <div class="row">
     <div class="btn-group btn-group-lg col-12" role="group" style="margin-top:3rem">
       <%=link_to t(:link_list),notices_path,{class: 'btn btn-secondary btn-large btn-block'} %>
     </div>
   </div>
-</article>
+</div>

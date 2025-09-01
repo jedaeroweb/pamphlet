@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-12">
+    <div id="blog-main" class="table-responsive">
+      <table class="table table-striped sl-table">
+        <colgroup>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
+        <thead class="thead-default">
+        <tr>
+          <th><%= t(:user_id, scope: [:activerecord, :attributes, :blog]) %></th>
+          <th><%= t(:blog_category_id, scope: [:activerecord, :attributes, :blog]) %></th>
+          <th><%= t(:title, scope: [:activerecord, :attributes, :blog]) %></th>
+          <th class="text-end"><%= t(:picture, scope: [:activerecord, :attributes, :blog_picture]) %></th>
+          <th class="text-end"><%= t(:label_count) %></th>
+          <th class="text-end"><%= t(:created_at, scope: [:activerecord, :attributes, :blog]) %></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% unless @blog_count.zero? %>
+          <% @blogs.each do |blog| %>
+            <tr>
+              <td><%=display_user_photo(blog.user) %>&nbsp;&nbsp;<%= blog.user.nickname.truncate_bytes(16) %></td>
+
+              <td><%=blog.blog_category.title %></td>
+              <td><%= link_to blog.title, blog %></td>
+              <td class="text-end">
+                <% if blog.blog_picture.present? %>
+                <figure class="figure">
+                <%= image_tag blog.blog_picture.picture.small_thumb.url, width:50, height:50,class: 'figure-img img-fluid rounded'  %>
+              </figure>
+                  <% else %>
+                -
+                <% end  %>
+              </td>
+              <td class="text-end"><%= blog.impressionist_count(:filter => :ip_address) %></td>
+              <td class="text-end text-secondary"><%= time_ago_in_words blog.created_at.to_date %></td>
+            </tr>
+          <% end %>
+        <% else %>
+          <tr>
+            <td colspan="6"><%= t(:no_data) %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <div id="sl_bottom_menu">
+        <%= paginate @blogs %>
+      </div>
+    </div>
+  </div>
+  <% if user_signed_in? %>
+  <div class="col-12">
+    <%=link_to t(:new_blog),new_blog_path,class: 'btn btn-primary btn-large' %>
+  </div>
+    <% end  %>
+</div>

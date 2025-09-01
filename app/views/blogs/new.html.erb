@@ -1,5 +1,8 @@
-<% breadcrumb :blogs %>
-<section id="sl_blog_new">
-	<%= render 'form' %>
-	<%= link_to t(:link_list), blogs_path %>
+<section id="new-blog">
+  <div class="row">
+    <h2 class="col-12 di-title"><%=t(:new_blog) %></h2>
+  </div>
+  <div class="row">
+    <%= render 'form', blog: @blog %>
+  </div>
 </section>

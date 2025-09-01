@@ -4,15 +4,11 @@ class CreateDeviseToUsers < ActiveRecord::Migration[6.0]
       ## Database authenticatable
       t.string :email,  :null => false, :limit=>100
       t.string :nickname, :null => false, :limit=>60
-      t.string :photo, :null=>true, :limit=>100
       t.string :encrypted_password, :null => false, :limit=>100
       t.string :description, :limit=>150
-      t.string :alternate_name, :limit=>100
       t.string :name, :limit=>60
       t.boolean :gender, :default=>false
       t.datetime :birth_date
-      t.string :job, :limit=>60
-      t.string :url, :limit=>150
 
       ## Recoverable
       t.string   :reset_password_token, :limit=>150
@@ -38,6 +34,8 @@ class CreateDeviseToUsers < ActiveRecord::Migration[6.0]
       # t.integer  :failed_attempts, :default => 0 # Only if lock strategy is :failed_attempts
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
+
+      t.integer :user_pictures_count, null: false, default: 0
 
       ## Token authenticatable
       # t.string :authentication_token

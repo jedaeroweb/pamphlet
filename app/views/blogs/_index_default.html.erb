@@ -1,0 +1,19 @@
+<section class="row">
+  <% unless @blog_count.zero? %>
+    <% @blogs.each do |blog| %>
+      <%=render 'index_media',blog: blog %>
+    <% end %>
+    <div class="col-12">
+      <%= paginate @blogs %>
+    </div>
+  <% else %>
+    <div class="blog col-12">
+      <%= t(:no_data) %>
+    </div>
+  <% end %>
+  <% if user_signed_in? %>
+  <div class="col-12">
+    <%=link_to t(:new_blog),new_blog_path,class: 'btn btn-primary btn-large' %>
+  </div>
+    <% end %>
+</section>

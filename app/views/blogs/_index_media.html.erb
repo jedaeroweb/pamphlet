@@ -1,0 +1,16 @@
+<article class="blog col-12">
+  <div class="row">
+    <div class="col-5 col-sm-12">
+      <% if blog.blog_picture.present? %>
+        <%= link_to blog_path(blog) do %>
+          <figure class="figure">
+            <%= image_tag blog.blog_picture.picture.medium_thumb.url,width:300,height:300,class:  'figure-img img-fluid rounded'  %>
+          </figure>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col-7 col-sm-12">
+      <h3><%= link_to blog.title, blog_path(blog) %></h3>
+    </div>
+  </div>
+</article>

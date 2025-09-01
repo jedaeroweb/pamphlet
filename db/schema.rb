@@ -49,57 +49,29 @@ ActiveRecord::Schema[7.1].define(version: 2022_08_29_171007) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "admin_login_logs", force: :cascade do |t|
-    t.integer "admin_id", null: false
-    t.integer "client_ip", limit: 8, null: false
-    t.boolean "enable", default: true, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["admin_id"], name: "index_admin_login_logs_on_admin_id"
-  end
-
-  create_table "admin_pictures", force: :cascade do |t|
-    t.integer "admin_id", null: false
-    t.string "picture", null: false
-    t.boolean "enable", default: true, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["admin_id"], name: "index_admin_pictures_on_admin_id"
-  end
-
-  create_table "admins", force: :cascade do |t|
-    t.string "email", limit: 100, null: false
-    t.string "name", limit: 100, null: false
-    t.string "encrypted_password", limit: 60, null: false
-    t.datetime "remember_created_at", precision: nil
-    t.integer "sign_in_count", default: 0
-    t.datetime "current_sign_in_at", precision: nil
-    t.datetime "last_sign_in_at", precision: nil
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
-    t.boolean "enable", default: true, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_admins_on_email", unique: true
-  end
-
   create_table "blog_categories", force: :cascade do |t|
-    t.integer "blog_category_id"
     t.string "title", limit: 60, null: false
     t.integer "blogs_count", default: 0, null: false
     t.boolean "enable", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["blog_category_id"], name: "index_blog_categories_on_blog_category_id"
+  end
+
+  create_table "blog_pictures", force: :cascade do |t|
+    t.integer "blog_id", null: false
+    t.string "picture", null: false
+    t.boolean "enable", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["blog_id"], name: "index_blog_pictures_on_blog_id"
   end
 
   create_table "blogs", force: :cascade do |t|
-    t.integer "user_id", null: false
     t.integer "blog_category_id", null: false
+    t.integer "user_id", null: false
     t.string "title", limit: 60, null: false
-    t.string "description", limit: 255, null: false
-    t.string "photo"
-    t.integer "blog_comments_count", default: 0, null: false
+    t.string "description", limit: 240
+    t.integer "blog_pictures_count", default: 0, null: false
     t.integer "count", default: 0, null: false
     t.boolean "enable", default: true, null: false
     t.datetime "created_at", null: false
@@ -226,29 +198,23 @@ ActiveRecord::Schema[7.1].define(version: 2022_08_29_171007) do
     t.string "name"
   end
 
-  create_table "user_photos", force: :cascade do |t|
+  create_table "user_pictures", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.string "photo", null: false
-    t.string "alt", limit: 60, null: false
-    t.boolean "default", default: false, null: false
+    t.string "picture", null: false
     t.boolean "enable", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_user_photos_on_user_id"
+    t.index ["user_id"], name: "index_user_pictures_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "email", limit: 100, null: false
     t.string "nickname", limit: 60, null: false
-    t.string "photo", limit: 100
     t.string "encrypted_password", limit: 100, null: false
     t.string "description", limit: 150
-    t.string "alternate_name", limit: 100
     t.string "name", limit: 60
     t.boolean "gender", default: false
     t.datetime "birth_date", precision: nil
-    t.string "job", limit: 60
-    t.string "url", limit: 150
     t.string "reset_password_token", limit: 150
     t.datetime "reset_password_sent_at", precision: nil
     t.datetime "remember_created_at", precision: nil
@@ -257,6 +223,7 @@ ActiveRecord::Schema[7.1].define(version: 2022_08_29_171007) do
     t.datetime "last_sign_in_at", precision: nil
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.integer "user_pictures_count", default: 0, null: false
     t.boolean "admin", default: false, null: false
     t.boolean "enable", default: true, null: false
     t.datetime "created_at", null: false

@@ -6,7 +6,9 @@ class UserAbility
     if user.admin? # Admin user
       can :manage, :all
     else # Non-admin user
+      #  can :manage, [Question,GuestBook]
       can :manage, [Contact]
     end
+
   end
 end
