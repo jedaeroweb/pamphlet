@@ -1,5 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 import { Modal } from "bootstrap"
+import { Fancybox } from "fancybox";
 
 export default class extends Controller {
     static targets = ["modal", "galleryImage", "blogImage"]  // 타겟 정의 추가
@@ -14,7 +15,18 @@ export default class extends Controller {
         // 각 이미지 그룹 독립적으로 처리
         this.loadGalleryImages()
         this.loadBlogImages()
+
+        Fancybox.bind(this.element.querySelectorAll('[data-fancybox="gallery"]'), {
+            // Fancybox 옵션을 여기에 추가할 수 있습니다
+        })
     }
+
+        disconnect() {
+            // 컨트롤러가 해제될 때 Fancybox 인스턴스도 정리
+            Fancybox.close()
+            Fancybox.destroy()
+        }
+
 
     // 갤러리 이미지 처리
     loadGalleryImages() {
