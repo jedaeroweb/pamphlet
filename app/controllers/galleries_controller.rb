@@ -6,15 +6,17 @@ class GalleriesController < ApplicationController
   # GET /galleries.json
   def index
     @gallery_categories = GalleryCategory.all
-
+    unless @gallery_categories.count.zero?
     if (params[:gallery_category_id])
       @gallery_category_id = params[:gallery_category_id].to_i
     else
       @gallery_category_id = @gallery_categories[0].id
     end
+    end
 
     @galleries = Gallery.where(:gallery_category_id => @gallery_category_id).order(:id => 'desc').page(params[:page]).per(30)
 
+    unless @galleries.count.zero?
     if (params[:id])
       @gallery = Gallery.find(params[:id])
     else
@@ -25,6 +27,8 @@ class GalleriesController < ApplicationController
       @title = @gallery.title
       @meta_description = @gallery.content
     end
+    end
+
 
     respond_to do |format|
       format.html # index.html.erb

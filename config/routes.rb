@@ -25,18 +25,13 @@ Rails.application.routes.draw do
     resources :galleries
   end
 
-
-
-
-
-
   devise_for :users, :controllers => { :sessions => "users/sessions",:registrations => "users/registrations" }, :path_names =>  {:sign_up=>'new',:sign_in => 'login', :sign_out => 'logout'} do
     get '/users', :to => 'users/registrations#index'
     get '/login', :to => 'users/sessions#new'
     get '/signup', :to => 'users/registrations#new'
   end
 
-  resources :intro, :about, :gallery_categories, :galleries, :notices, :locations, :teams, :histories, :contacts
+  resources :intro, :about, :galleries, :notices, :locations, :histories, :contacts
 
   resources :blogs do
     resources :blog_comments
@@ -56,6 +51,4 @@ Rails.application.routes.draw do
       post 'password',:on=>:collection
     end
   end
-
-
 end

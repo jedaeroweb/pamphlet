@@ -16,9 +16,7 @@ ko:
   jedaeroweb : '제대로웹'
   korean: '한국어'
   english: '영어'
-  french: '프랑스어'
   chineses: '중국어'
-  japanese: '일본어'
   change_language: '언어바꾸기'
 
 
@@ -377,7 +375,6 @@ ko:
       location : '찾아오는 길'
       team : '팀소개'
       blog : '블로그'
-      gallery : '사진첩'
       notice : '공지사항'
       contact : '고객등록,문의'
       history : '약력'
@@ -411,12 +408,13 @@ ko:
         blog_category_id : '분류'
         user_id : '작성자'
         title : '제목'
-        photo : '사진'
         content : '내용'
         description : '설명'
         enable: '보임'
         updated_at: '수정일'
         created_at: '작성일'
+      blog_picture :
+        picture : '사진'
       history :
         year : '연도'
         title : '제목'

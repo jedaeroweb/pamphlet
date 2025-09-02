@@ -37,8 +37,6 @@ class ContactsController < ApplicationController
   # PATCH/PUT /contact/1
   # PATCH/PUT /contact/1.json
   def update
-    @script="board/edit"
-  
     respond_to do |format|
       if @contact.update(notice_params)
         format.html { redirect_to @contact, notice: @controller_name +t(:message_success_update)}

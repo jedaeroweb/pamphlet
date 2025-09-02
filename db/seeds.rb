@@ -31,4 +31,6 @@ Blog.create!(id: 1, user_id: 1, blog_category_id: 1, title: '잠자는-사자의
 
 Notice.create!(id: 1, user_id: 1, title: '방문을 환경합니다.',content: '고객등록을 해주시면 자세한 상담이 가능합니다.
 마지막 남은 이번 기회 절대 놓치지 않도록 고객등록 하고 상담받으세요~')
+
+History.create!(id: 1, title: '영업시작' , year: 2014, month: 4, content: 'asdgsadgasdgasdg' )
  
