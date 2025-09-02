@@ -1,7 +1,4 @@
 <% breadcrumb :faqs %>
-<% if notice %>
-<%= render :partial => 'layouts/notice',:locals=>{:notice=>notice} %>
-<% end %>
 <section id="sl_faq_index">	
 		<ol class="nav nav-tabs">
 			<% unless @faq_categories.empty? %>

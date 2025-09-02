@@ -186,6 +186,11 @@ Devise.setup do |config|
   # change their passwords.
   config.reset_password_within = 6.hours
 
+
+  config.warden do |manager|
+    manager.default_strategies(scope: :admin).unshift :database_authenticatable
+  end
+
   # ==> Configuration for :encryptable
   # Allow you to use another encryption algorithm besides bcrypt (default). You can use
   # :sha1, :sha512 or encryptors from others authentication tools as :clearance_sha1,

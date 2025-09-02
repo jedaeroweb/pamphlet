@@ -1,37 +1,33 @@
 <% breadcrumb :locations %>
-<% if notice %>
-<%= render :partial => 'layouts/notice',:locals=>{:notice=>notice} %>
-<% end %>
 <style>
-	/* Always set the map height explicitly to define the size of the div
-   * element that contains the map. */
-	gmp-map {
-		height: 100%;
-	}
-
-	/* Optional: Makes the sample page fill the window. */
-	html,
-	body {
-		height: 100%;
-		margin: 0;
-		padding: 0;
-	}
+gmp-map {
+	display: block;
+	width: 100%;
+	height: 500px;  /* 명시적인 높이 설정 */
+}
 </style>
+
 <section id="sl_location_index">
 	<article>
-		<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvoDwJX6RR4TEqpvM7FXp_S7spO1Kco3w&callback=console.debug&libraries=maps,marker&v=beta">
-			<gmp-map center="-34.397, 150.644" zoom="4" map-id="DEMO_MAP_ID">
-				<gmp-advanced-marker position="-34.397, 150.644" title="My location"></gmp-advanced-marker>
-			</gmp-map>
-	</article>
-	<article>
-		<h3>IPark 영통역 오피스텔 주소</h3>
-		<dl>
-			<dt>모델하우스</dt>
-			<dd>경기도 수원시 영통구 매영로 345번길 40</dd>
-			<dt>현장</dt>
-			<dd>경기도 수원시 영통구 반달로 95</dd>
-		</dl>
-	</article>
-	<h3>방문에 어려움이 있거나, 방문하셨을때 6팀 정종호 과장(<a href="tel://<%=t(:tel) %>"><%=t(:tel) %></a>)을 찾아주세요</h3>
+		<script async
+						src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvoDwJX6RR4TEqpvM7FXp_S7spO1Kco3w&libraries=maps,marker&v=beta">
+</script>
+
+<gmp-map center="37.2435,127.0707" zoom="15" map-id="YOUR_MAP_ID">
+	<gmp-advanced-marker position="37.2435,127.0707" title="IPark 영통역 오피스텔"></gmp-advanced-marker>
+</gmp-map>
+</article>
+
+<article>
+	<h3>IPark 영통역 오피스텔 주소</h3>
+	<dl>
+		<dt>모델하우스</dt>
+		<dd>경기도 수원시 영통구 매영로 345번길 40</dd>
+		<dt>현장</dt>
+		<dd>경기도 수원시 영통구 반달로 95</dd>
+	</dl>
+</article>
+<h3>방문에 어려움이 있거나, 방문하셨을때 6팀 정종호 과장(<a href="tel://<%=t(:tel) %>"><%=t(:tel) %></a>)을 찾아주세요</h3>
 </section>
+
+

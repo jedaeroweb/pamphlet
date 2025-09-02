@@ -36,6 +36,7 @@
 		<div class="row">
 			<main class="sub-main  <% if current_page?(root_path) %>  mt-3 mt-lg-4 mt-xl-5 <% end %>  <% if session[:no_aside] %> col-12<% else %> col-12 col-xl-9 <% end %>">
 				<%= render 'layouts/ad' %>
+				<%= render :partial => 'layouts/notice', :locals => { :notice => notice, :alert => alert } %>
 				<%=yield %>
 			</main>
 			<%= render 'layouts/aside' %>

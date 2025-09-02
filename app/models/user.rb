@@ -8,6 +8,6 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :user_picture, allow_destroy: true
 
   def admin?
-    admin == true
+    admin
   end
 end

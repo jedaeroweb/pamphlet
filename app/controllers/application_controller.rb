@@ -41,6 +41,8 @@ class ApplicationController < ActionController::Base
       return 'application'
     end
   end
+
+
   protected
 
   def admin_signed_in?
@@ -52,6 +54,4 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :admin_signed_in?, :current_admin
-
-
 end
