@@ -380,7 +380,7 @@ ko:
       gallery : '사진첩'
       notice : '공지사항'
       contact : '고객등록,문의'
-      history : '연혁'
+      history : '약력'
       about : '사이트 소개'
     attributes :
       admin :
