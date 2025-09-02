@@ -212,9 +212,6 @@ ActiveRecord::Schema[7.1].define(version: 2022_08_29_171007) do
     t.string "nickname", limit: 60, null: false
     t.string "encrypted_password", limit: 100, null: false
     t.string "description", limit: 150
-    t.string "name", limit: 60
-    t.boolean "gender", default: false
-    t.datetime "birth_date", precision: nil
     t.string "reset_password_token", limit: 150
     t.datetime "reset_password_sent_at", precision: nil
     t.datetime "remember_created_at", precision: nil

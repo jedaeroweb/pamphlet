@@ -3,7 +3,7 @@
 	<% unless @notices.empty? %>
 	<ul>
 		<% @notices.each do |notice| %>
-		<li><%=notice.user.name %> : <%=link_to(notice.title,notice) %> <span class="float-right text-secondary d-none d-sm-block"><%= notice.created_at.to_date %></span></li>
+		<li><%=notice.user.nickname %> : <%=link_to(notice.title,notice) %> <span class="float-right text-secondary d-none d-sm-block"><%= notice.created_at.to_date %></span></li>
 		<% end %>
 	</ul>
 	<% else %>
