@@ -69,7 +69,8 @@ ko:
   there_are_n_notices: "공지사항이 <strong class=\"mark\">%{count}개</strong> 있습니다"
   there_are_n_contacts : "문의가 <strong class=\"mark\">%{count}개</strong> 있습니다"
   there_are_n_blogs : "블로그가 <strong class=\"mark\">%{count}개</strong> 있습니다"
-
+  there_are_n_galleries : "사진이 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_histories : "약력이 <strong class=\"mark\">%{count}개</strong> 있습니다"
 
   success_title : '축하합니다!!'  
   message_success_create : '이(가) 성공적으로  등록되었습니다.'
@@ -431,14 +432,19 @@ ko:
         picture : '사진'
       history :
         year : '연도'
+        month : '월'
         title : '제목'
         content : '내용'
+        updated_at: '수정일'
+        created_at: '작성일'
       gallery :        
         gallery_category_id : '분류'
         title : '제목'
         photo : '사진' 
         location : '장소'
         content : '내용'
+        updated_at: '수정일'
+        created_at: '작성일'
       notice :
         title : '제목'
         content : '내용'

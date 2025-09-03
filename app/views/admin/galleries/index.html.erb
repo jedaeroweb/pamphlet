@@ -1,63 +1,72 @@
-<section id="sl_notice_index" class="table-responsive"> 
-  <table width="100%" cellpadding="0" cellspacing="0" class="table table-striped table-hover">
+<div class="col-12">
+	<h2 class="float-left hidden-title"><%= t(:gallery_list) %></h2>
+	<div class="float-right">
+		<p class="summary">
+			<span id="list_count" style="display:none"><%=@gallery_count %></span>
+			<%=raw t(:there_are_n_galleries,count: @gallery_count) %>
+		</p>
+	</div>
+</div>
+<article class="col-12">
+	<table id="prepare_list" class="table table-striped table-hover">
 		<colgroup>
-			<col width="100px" />
-			<col />
-			<col width="70px" />
-			<col width="130px" />
-    <% if can?(:update, Gallery) || can?(:delete, Gallery) %>
-    <col <%=raw manage_width(Gallery) %> />
-    <% end %>			
+			<col style="width:120px">
+			<col>
+			<col>
+			<col style="width:210px">
+			<% if can?(:update, Gallery) || can?(:delete, Gallery) %>
+				<col<%=manage_width(Gallery) %>>
+			<% end %>
 		</colgroup>
-		<thead>
-			<tr>
-				<th><p class="sl_name"><%=t(:label_photo) %></p></th>
-				<th><p class="sl_title"><%=t(:label_title) %></p></th>
-				<th class="sl_right"><p class="sl_count">조회</p></th>
-				<th class="sl_right"><p class="sl_registered_date">등록일</p></th>
-   <th class="sl_right"><p class="sl_manage"><%=t(:label_manage) %></p></th>				
-			</tr>
+		<thead class="thead-default">
+		<tr>
+			<th class="text-center"><%= t(:enable,scope:[:activerecord,:attributes,:gallery]) %></th>
+			<th><%= t(:title,scope:[:activerecord,:attributes,:gallery]) %></th>
+			<th><%= t(:count,scope:[:activerecord,:attributes,:gallery]) %></th>
+			<th class="text-right"><%= t(:created_at,scope:[:activerecord,:attributes,:gallery]) %></th>
+			<% if can?(:update, Gallery) || can?(:delete, Gallery) %>
+				<th class="text-center"><%= t(:manage) %></th>
+			<% end %>
+		</tr>
 		</thead>
 		<tbody>
-			<tr class="none">
-				<td><p class="sl_name"></p></td>
-				<td><p><a class="sl_show_link" href="show.php"></a></p></td>
-				<td class="sl_right"><p class="sl_count"></p></td>
-				<td class="sl_right"><p class="sl_registered_date"></p></td>
-			</tr>
-			<% unless @admin_galleries.empty? %>
-			<% @admin_galleries.each do |admin_gallery| %>
-			<tr>
-				<td><%=image_tag admin_gallery.photo.small_thumb %></td>
-				<td><p><%= link_to admin_gallery.title, admin_gallery_path(admin_gallery)  %></p></td>
-				<td class="sl_right"><p class="sl_count"></p></td>
-				<td class="sl_right"><p class="sl_registered_date"><%=admin_gallery.created_at.to_date %></p></td>
-      <% if can?(:update, admin_gallery) || can?(:delete, admin_gallery) %>
-      <td>
-        <% if can? :update, admin_gallery %>
-        <%= link_to edit_admin_gallery_path(admin_gallery),:class=>"btn btn-default btn-sm" do %>
-        <i class="glyphicon glyphicon-pencil"></i> <%=t(:link_edit) %>
-        <% end %>
-        <% end %>
-        <% if can? :delete, admin_gallery %>
-        <%= link_to admin_gallery_path(admin_gallery), :method => :delete, :data => { :confirm => t(:delete_confirm) },:class=>"btn btn-sm btn-danger pull-right" do %>
-        <i class="glyphicon glyphicon-trash"></i> <%=t(:link_delete) %>
-        <% end %>
-        <% end %>
-      </td>
-      <% end %>
-			</tr>
-			<% end %>			
-			<% else %>
-			<tr>
-        <td colspan="5"><p><%=t(:no_data) %></p></td>
-			</tr>
+		<% unless @gallery_count.zero? %>
+			<% @galleries.each_with_index do |gallery,index| %>
+				<tr>
+					<td>
+						<div class="custom-control custom-switch">
+							<input type="checkbox" class="custom-control-input" id="notice_display<%=index %>" value="<%=gallery.id %>" <% if gallery.enable %> checked<% end %>>
+							<label class="custom-control-label" for="notice_display<%=index %>"><% if gallery.enable %> <%=t(:display) %><% else %><%=t(:hidden) %><% end %> </label>
+						</div>
+					</td>
+					<td><%= link_to gallery.title,admin_gallery_path(gallery) %></td>
+					<td class="text-right"></td>
+					<td class="text-right"><%= I18n.l gallery.created_at.to_date, :format => :long %></td>
+					<% if can?(:update, gallery) or can?(:delete, gallery) %>
+						<td class="text-right">
+							<% if can? :update, gallery %>
+								<%= link_to edit_admin_gallery_path(gallery), :class => "btn btn-secondary" do %>
+									<%= t(:edit) %>
+								<% end %>
+							<% end %>
+							<% if can? :delete, gallery %>
+								<%= link_to admin_gallery_path(gallery), :method => :delete, :data => { :confirm => t(:delete_confirm) }, :class => "btn btn-danger" do %>
+									<%= t(:delete) %>
+								<% end %>
+							<% end %>
+						</td>
+					<% end %>
+				</tr>
 			<% end %>
-		</table>
-		<div id="sl_bottom_menu">
-		<% if can? :create,Gallery %>
-	<%= link_to '글쓰기', new_admin_gallery_path %>
-	<% end %>
-				<%= paginate @admin_galleries %>
+		<% else %>
+			<tr>
+				<td colspan="4" class="text-center"><%= t(:no_data) %></td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+	<div class="pagination justify-content-center">
+		<%= paginate @galleries %>
 	</div>
-</section>
+	<%= link_to t(:add), new_admin_gallery_path, :class => "btn btn-primary" %>
+</article>

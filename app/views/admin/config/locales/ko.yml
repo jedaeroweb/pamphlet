@@ -1,0 +1,963 @@
+ko:
+  service_name: '인테리어 중개'
+  webpage_title: '건축, 인테리어 중개 플랫폼 | 중개사이트'
+  webpage_description : '종합 건축 플랫폼,건축,인테리어,시공,부분시공,적산,견적'
+  company: '제대로웹'
+
+  korean: '한국어'
+  chineses: '汉语'
+  english: 'english'
+
+  login_title: '로그인'
+  search : "검색"
+  submit : "제출"
+  choose_file: '파일선택'
+  browse: '찾기'
+  setting: '설정'
+  confirm : '확인'
+
+  menu_ad: '공고'
+  menu_construction: '건축'
+  menu_interior: '인테리어'
+  menu_part: '부분 시공'
+  menu_community: '커뮤니티'
+  menu_simulation: '<span class="d-none d-lg-inline">건축</span> 적산,의뢰'
+
+
+  main_company : '업체'
+
+  search_order : "주문내역"
+  search_user : "회원검색"
+  select_user : "회원선택"
+  select_product : "상품선택"
+  select_option : '입력하려면 선택'
+  deleted_user: '삭제된 회원'
+
+  go_list : '돌아가기'
+  call_phone : '전화걸기'
+  view_count : '조회수'
+
+  name : "이름"
+  phone : "전화번호"
+  payment_n_total : "결제방법, 합계"
+  manage : "관리"
+  image : "이미지"
+  check : "선택"
+  transaction_date: '거래일'
+  display: '표시함'
+  hidden: '숨김'
+  none: '없음'
+  exists : '있음'
+  use: '사용'
+  not_use: '사용안함'
+  label_count : '조회수'
+  membership : '가입하기'
+  bidding : '입찰'
+  already_bidding : '이미 입찰하셨습니다(입찰중)'
+  already_bidding_short : '입찰중'
+  summary: '요약'
+  mypage: '마이페이지'
+  myinfo: '내정보'
+  charge : '충전'
+
+  add_order : "주문추가"
+  order : "주문"
+  product : "상품"
+  price : "가격"
+  quantity : "수량"
+  cancel : "취소"
+  cash : "현금"
+  credit : "신용카드"
+  point : "포인트"
+  total_price : "합계"
+  currency : "원"
+  address : "주소"
+  jedaeroweb : '제대로웹'
+  total : '합계'
+  amount : '합계액'
+  ordered : '낙찰'
+  new : '신규'
+  buy : '구입'
+
+  secret_article : '비밀글입니다'
+  login_first : "먼저 로그인 해주세요"
+  no_exists_order : "주문이 없습니다"
+
+  add : "신규"
+  edit: "수정"
+  delete: "삭제"
+  manage : '관리'
+  share : '공유하기'
+
+  email  :  "이메일"
+  password : "비밀번호"
+  login_p_email : "이메일을 써주세요"
+  login_p_password : "비밀번호를 써주세요"
+  login : "로그인"
+  logout : "로그아웃"
+  remember_me : "기억하기"
+  delete_user: '회원탈퇴'
+
+  all : '전체'
+  today : '오늘'
+  week : '일주일'
+  year : '일년'
+  all_period : '전기간'
+  current_month : '이번달'
+  next_month : '다음달'
+
+  no_data : '해당 데이터가 없습니다.'
+  no_group: '그룹없음'
+  no_phone: '전화번호 미입력'
+  not_insert : '미입력'
+  there_are_n_ad_categoriess : "공고분류가 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_ads : "공고가 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_addresses: "주소가 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_address_levels: "주소단계가 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_biddings : "입찰이 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_accepted_biddings : "낙찰이 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_blog_categories: "블로그분류가 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_blogs : "블로그가 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_contacts : "상담,문의가 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_faq_categories : "묻고답하기 분류가 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_faqs : "몯고답하기가 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_products : "상품이 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_product_categories : "상품분류가 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_points : "포인트가 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_notices : "공지사항이 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_orders: "주문이 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_users : "회원이 <strong class=\"mark\">%{count}명</strong> 있습니다"
+  there_are_n_admins : "관리자가 <strong class=\"mark\">%{count}명</strong> 있습니다"
+  there_are_n_companies : "업체가 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_materials: "재료가 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_reviews : "후기가 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_speciality_categories: "전문분야분류가 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_specialities: "전문분야가 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_reservations: "모델하우스 방문신청이 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_sizes: "면적이 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_simulation_categories: "적산해보기분류가 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_simulations : "적산해보기가 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_simulation_materials : "적산결과가 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_user_simulation_materials : "적산상담신청이 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_payments: "결제가 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_requests : "의뢰가 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_questions : "질문,답변이 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_slides : "슬라이드가 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_portfolios : "포트폴리오가 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_charge_points : "포인트 충전상품이 <strong class=\"mark\">%{count}개</strong> 있습니다"
+
+  success_title : '처리되었습니다'
+  error_title : '죄송합니다'
+  login_page : '로그인 화면'
+  delete_confirm: '정말로삭제합니까?'
+  delete_cascade_confirm: "중대 경고!!\n이 항목을 삭제할 경우 이 항목뿐아니라 이 항목의 정보를 포함하는 모든 데이터가 삭제됩니다.\n그래도 진행하시겠습니까?"
+  message_success_create: '이(가) 성공적으로  등록되었습니다.'
+  message_success_update: '이(가) 성공적으로  수정되었습니다.'
+  message_success_destroy: '이(가) 성공적으로  삭제되었습니다.'
+
+  link_list: '목록으로'
+  link_new: '새로작성'
+  link_show: '상세보기'
+  more: '더보기'
+
+  intro: '서비스소개'
+  privacy : '개인정보취급방침'
+  agreement : '이용약관'
+
+  new_ad : '공고등록'
+  edit_ad : '공고수정'
+  new_address: '주소등록'
+  edit_address: '주소수정'
+  new_blog_category: '블로그분류등록'
+  edit_blog_category: '블로그분류수정'
+  new_blog: '블로그등록'
+  edit_blog: '블로그수정'
+  new_contact: '신규상담,문의'
+  edit_contact: '상담,문의수정'
+  new_product_category: '상품분류등록'
+  edit_product_category:  '상품분류수정'
+  new_product: '상품등록'
+  edit_product:  '상품수정'
+  new_admin: '관리자등록'
+  edit_admin:  '관리자수정'
+  new_point: '포인트등록'
+  edit_point:  '포인트수정'
+  new_user: '회원가입'
+  new_speciality : '전문분야등록'
+  edit_speciality : '전문분야수정'
+  new_speciality_category : '전문분야분류등록'
+  edit_speciality_category : '전문분야분류수정'
+  new_reservation : '방문예약'
+  new_notice : '공지사항등록'
+  edit_notice : '공지사항수정'
+  new_faq_category : '일반적인질문 분류 등록'
+  edit_faq_category : '일반적인질문 분류 수정'
+  new_faq : '묻고답하기등록'
+  edit_faq : '묻고답하수정'
+  new_company : '전문가,업체등록'
+  edit_company : '전문가,업체수정'
+  new_bidding: '입찰하기'
+  edit_bidding: '입찰수정'
+  new_material: '재료등록'
+  edit_material: '재료수정'
+  new_size : '면적등록'
+  edit_size : '면적수정'
+  new_simulation: '적산해보기등록'
+  edit_simulation: '적산해보기수정'
+  new_simulation_material : '적산결과등록'
+  edit_simulation_material : '적산결과수정'
+  new_user_simulation_material : '적산신청등록'
+  edit_user_simulation_material : '적산신청수정'
+  new_question: '신규질문'
+  edit_question: '질문수정'
+  new_request: '신규의뢰'
+  edit_request: '의뢰수정'
+  new_slide: '신규슬라이드'
+  edit_slide: '슬라이드수정'
+  new_charge_point: '신규포인트충전상품'
+  edit_charge_point: '포인트충전상품수정'
+  new_user_address : '배송주소등록'
+  edit_user_address : '배송주소수정'
+  edit_scroll_title : '흐르는글씨수정'
+  new_portfolio : '포트폴리오등록'
+  edit_portfolio : '포트폴리오수정'
+  new_speciality_man : '전문분야노임등록'
+  edit_speciality_man : '전문분야노임수정'
+  new_answer : '신규답변'
+  edit_answer : '답변수정'
+
+  new_simulation_category: '적산해보기분류등록'
+  edit_simulation_category: '적산해보기분류수정'
+
+  new_review : '리뷰작성'
+  show_review : '리뷰보기'
+
+  edit_user: ''
+  add_cart : '장바구니에 추가'
+
+  ad_list: '공고목록'
+  blog_category_list: '블로그분류목록'
+  blog_list: '블로그목록'
+  product_category_list: '상품분류목록'
+  product_list: '상품목록'
+  point_list: '포인트목록'
+  user_list: '회원목록'
+  company_list: '전문가,회사목록'
+  admin_list: '관리자목록'
+  simulation_category_list: '적산해보기분류목록'
+  simulation_list: '적산해보기목록'
+  slide_list: '슬라이드목록'
+  review_list: '리뷰목록'
+  charge_point_list: '포인트충전상품목록'
+
+  devise:
+    confirmations:
+      confirmed: 가입을 축하드립니다. 지금부터 로그인 가능합니다.
+      send_instructions: 가입 승인 절차에 관한 안내 메일을 곧 받아 보실 수 있습니다.
+      send_paranoid_instructions: 메일주소가 이미 등록되어 있으면, 잠시 후에 계정을 등록 하는 방법이 담긴 메일을 받을 수 있습니다.
+    failure:
+      already_authenticated: 이미 로그인되어 있습니다.
+      inactive: 계정이 아직 활성화되지 않았습니다.
+      invalid: 아이디나 비밀번호가 맞지않습니다.
+      last_attempt:
+      locked: 계정이 잠겨있습니다.
+      not_found_in_database: 아이디나 비밀번호가 맞지않습니다.
+      timeout: 로그아웃 되었습니다. 계속 하려면 다시 로그인 해야 합니다.
+      unauthenticated: 먼저 로그인후 진행해주세요
+      unconfirmed: "계속하기 전에 이메일 주소를 인증해야 합니다. 입력한 이메일 주소를 확인해주세요"
+    mailer:
+      confirmation_instructions:
+        action: "buildworld.co.kr 본인 계정 인증"
+        greeting: "%{recipient}님 buildworld.co.kr 가입을 환영합니다!"
+        instruction: "아래의 링크를 클릭하시면 이메일 인증이 완료됩니다:"
+        subject: "buildworld.co.kr 이메일 인증 안내"
+      password_change:
+        greeting:
+        message:
+        subject:
+      reset_password_instructions:
+        action: "이 링크를 클릭하시면 비밀번호 재 설정 페이지로 이동합니다."
+        greeting: "%{recipient}님 안녕하세요!"
+        instruction: "안녕하세요 buildworld 비밀번호 재 설정 안내입니다."
+        instruction_2: "비밀번호 변경을 요청하지 않으셨다면 이 메일을 무시하십시오."
+        instruction_3: "위 링크에 접속하여 새로운 비밀번호를 생성하기 전까지 귀하의 비밀번호는 변경되지 않습니다."
+        subject: "buildworld 비밀번호 재 설정 안내입니다."
+      unlock_instructions:
+        action: "본인 계정 잠금 해제"
+        greeting: "%{recipient}님 안녕하세요!"
+        instruction: "계정 잠금을 해제하려면 아래 링크를 클릭하세요."
+        message: "로그인 실패 횟수 초과로 귀하의 계정이 잠금 처리되었습니다."
+        subject: "잠금 해제 안내"
+    omniauth_callbacks:
+      failure: '%{reason}과 같은 이유로 %{kind}로부터 인증받지 못했습니다.'
+      success: '%{kind} 계정에서 인증되었습니다.'
+    passwords:
+      no_token: 페스워드 리셋 이메일을 거치지않고 이 페이지에 접근 할 수 없습니다. 페스워드 리셋 이메일에서 오셨다면, 주소가 온전한지 확인해 주세요.
+      send_instructions: 잠시 후에 비밀번호를 재설정할 수 있는 메일을 받을 수 있습니다.
+      send_paranoid_instructions: 정상적으로 등록된 이메일 주소인 경우, 몇 분 안에 비밀번호 복구 링크주소를 이메일로 받으시게 됩니다.
+      updated: 비밀번호를 변경했습니다. 로그인 되었습니다.
+      updated_not_active: 비밀번호가 성공적으로 변경되었습니다.
+    registrations:
+      destroyed: 잘가세요! 계정이 성공적으로 제거 되었습니다. 다시 볼 수 있기를 바랍니다.
+      signed_up: 안녕하세요! 성공적으로 로그인되었습니다.
+      signed_up_but_inactive: 가입이 성공적으로 되었지만 아직 활성화 되지 않았기 때문에 로그인할 수는 없습니다.
+      signed_up_but_locked: 가입이 성공적으로 되었지만, 계정이 잠겨있어 로그인할 수는 없습니다.
+      signed_up_but_unconfirmed: 당신의 이메일로 인증링크가 포함된 메시지를 보냈습니다. 계정활성화를 위해 메일을 확인하세요.
+      update_needs_confirmation: '성공적으로 계정이 갱신되었습니다. 그러나 새 이메일 주소를 확인하여야 합니다. 변경된 메일을 확인하시고 확인 버튼을 눌러야 합니다. '
+      updated: 당신의 계정을 성공적으로 업데이트 하였습니다.
+    sessions:
+      signed_in: 성공적으로 로그인이 되었습니다.
+      signed_out: 정상적으로 로그아웃 되었습니다.
+    unlocks:
+      send_instructions: 잠시 후에 어떻게 계정을 해제(사용가능하게)할 수 있는지 설명된 이메일을 받을 수 있습니다.
+      send_paranoid_instructions: 계정을 가지고 계시면, 잠시 후에 어떻게 계정을 해제(사용가능하게)할 수 있는지 설명된 이메일을 받을 수 있습니다.
+      unlocked: 계정이 성공적으로 해제되었습니다. 이제, 로그인 할 수 있습니다.
+
+  views :
+    pagination :
+      truncate : '&nbsp;...&nbsp;'
+      previous : '이전'
+      last : '마지막'
+      next : '다음'
+      first : '처음'
+  date:
+    abbr_day_names:
+      - 일
+      - 월
+      - 화
+      - 수
+      - 목
+      - 금
+      - 토
+    abbr_month_names:
+      -
+      - 1월
+      - 2월
+      - 3월
+      - 4월
+      - 5월
+      - 6월
+      - 7월
+      - 8월
+      - 9월
+      - 10월
+      - 11월
+      - 12월
+    day_names:
+      - 일요일
+      - 월요일
+      - 화요일
+      - 수요일
+      - 목요일
+      - 금요일
+      - 토요일
+    formats:
+      default: ! '%Y년 %m월 %d일'
+      long: ! '%Y년 %m월 %d일 (%a)'
+      short: ! '%m/%d'
+    month_names:
+      -
+      - 1월
+      - 2월
+      - 3월
+      - 4월
+      - 5월
+      - 6월
+      - 7월
+      - 8월
+      - 9월
+      - 10월
+      - 11월
+      - 12월
+    order:
+      - :year
+      - :month
+      - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: 약 한 시간
+        other: 약 %{count}시간
+      about_x_months:
+        one: 약 한 달
+        other: 약 %{count}달
+      about_x_years:
+        one: 약 일 년
+        other: 약 %{count}년
+      almost_x_years:
+        one: 일 년 이하
+        other: ! '%{count}년 이하'
+      half_a_minute: 30초
+      less_than_x_minutes:
+        one: 일 분 이하
+        other: ! '%{count}분 이하'
+      less_than_x_seconds:
+        one: 일 초 이하
+        other: ! '%{count}초 이하'
+      over_x_years:
+        one: 일 년 이상
+        other: ! '%{count}년 이상'
+      x_days:
+        one: 하루
+        other: ! '%{count}일'
+      x_minutes:
+        one: 일 분
+        other: ! '%{count}분'
+      x_months:
+        one: 한 달
+        other: ! '%{count}달'
+      x_seconds:
+        one: 일 초
+        other: ! '%{count}초'
+    prompts:
+      day: 일
+      hour: 시
+      minute: 분
+      month: 월
+      second: 초
+      year: 년
+  errors: &errors
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: 을(를) 반드시 확인해야 합니다
+      blank: 에 내용을 입력해 주세요
+      confirmation: 은(는) 서로 일치해야 합니다
+      empty: 에 내용을 입력해 주세요
+      equal_to: 은(는) %{count}과 같아야 합니다
+      even: 에 짝수를 입력해 주세요
+      exclusion: 은(는) 이미 예약되어 있는 값입니다
+      greater_than: 은(는) %{count}보다 커야 합니다
+      greater_than_or_equal_to: 은(는) %{count}보다 크거야 같아야 합니다
+      inclusion: 은(는) 목록에 포함되어 있는 값이 아닙니다
+      invalid: 은(는) 올바르지 않은 값입니다
+      less_than: 은(는) %{count}보다 작아야 합니다
+      less_than_or_equal_to: 은(는) %{count}과 작거나 같아야 합니다
+      not_a_number: 에 숫자를 입력해 주세요
+      not_an_integer: 에 정수를 입력해 주세요
+      odd: 에 홀수를 입력해 주세요
+      record_invalid: 데이터 검증에 실패하였습니다. %{errors}
+      taken: 은(는) 이미 존재합니다.
+      too_long: 은(는) %{count}자를 넘을 수 없습니다
+      too_short: 은(는) 적어도 %{count}자를 넘어야 합니다
+      wrong_length: 은(는) %{count}자여야 합니다
+      carrierwave_processing_error: failed to be processed
+      carrierwave_integrity_error: is not of an allowed file type
+      carrierwave_download_error: could not be downloaded
+      extension_whitelist_error: "You are not allowed to upload %{extension} files, allowed types: %{allowed_types}"
+      extension_blacklist_error: "You are not allowed to upload %{extension} files, prohibited types: %{prohibited_types}"
+      content_type_whitelist_error: "You are not allowed to upload %{content_type} files"
+      content_type_blacklist_error: "You are not allowed to upload %{content_type} files"
+      rmagick_processing_error: "Failed to manipulate with rmagick, maybe it is not an image?"
+      mini_magick_processing_error: "Failed to manipulate with MiniMagick, maybe it is not an image? Original Error: %{e}"
+      min_size_error: "File size should be greater than %{min_size}"
+      max_size_error: "업로드 파일은 %{max_size}보다 작아야 합니다."
+    template:
+      body: ! '다음 항목에 문제가 발견되었습니다:'
+      header:
+        one: 한 개의 오류가 발생해 %{model}를 저장 할 수 없습니다
+        other: ! '%{count}개의 오류가 발생해 %{model}를 저장 할 수 없습니다'
+  helpers:
+    select:
+      prompt: 선택해주세요
+    submit:
+      create: 등록
+      submit: 제출
+      update: 수정
+  number:
+    currency:
+      format:
+        delimiter: ! ','
+        format: ! '%n%u'
+        precision: 0
+        separator: .
+        significant: false
+        strip_insignificant_zeros: false
+        unit: 원
+    format:
+      delimiter: ! ','
+      precision: 3
+      separator: .
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n%u'
+        units:
+          billion: 십억
+          million: 백만
+          quadrillion: 경
+          thousand: 천
+          trillion: 조
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n%u'
+        units:
+          byte: 바이트
+          gb: 기가바이트
+          kb: 킬로바이트
+          mb: 메가바이트
+          tb: 테라바이트
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ', '
+      two_words_connector: ! '와(과) '
+      words_connector: ! ', '
+  time:
+    am: 오전
+    formats:
+      default: ! '%Y/%m/%d %H:%M:%S'
+      long: ! '%Y년 %B %d일, %H시 %M분 %S초'
+      short: ! '%y/%m/%d %H:%M'
+    pm: 오후
+  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
+
+  activemodel:
+    errors:
+      <<: *errors
+  activerecord:
+    models:
+      ad : '공고'
+      address : '지역'
+      address_level : '지역단계'
+      accepted_bidding : '낙찰'
+      bidding: '입찰'
+      blog : '시공사례'
+      blog_category : '시공사례분류'
+      charge_point : '포인트충전상품'
+      company: '전문가,회사'
+      company_picture: '회사이미지'
+      company_address: '선호지역'
+      contact_category : '문의분류'
+      contact : '상담,문의'
+      product_category: '상품분류'
+      product: '상품'
+      order: '주문'
+      user: '회원'
+      user_point_log : '포인트기록'
+      speciality : '전문분야'
+      speciality_man : '전문분야 노임'
+      speciality_category : '전문분야분류'
+      speciality_category_product: '전문분야노출'
+      shopping: '쇼핑몰'
+      admin : '관리자'
+      material : '재료'
+      notice : '공지사항'
+      faq_category : '일반적인질문분류'
+      faq : '일반적인질문'
+      review : '후기'
+      reservation : '방문예약'
+      size : '면적'
+      simulation_category : '적산해보기분류'
+      simulation : '적산해보기'
+      simulation_material : '적산결과'
+      slide : '슬라이드'
+      setting : '설정'
+      user_simulation_material : '적산상담신청'
+      user_picture : '회원이미지'
+      payment : '결제'
+      portfolio : '포트폴리오'
+      request : '설계 의뢰,신청'
+      question : '질문,답변'
+    attributes :
+      ad:
+        ad_category_id : '분류'
+        address_id : '지역'
+        ad_pictures : '이미지'
+        speciality : '전문분야'
+        speciality_id : '전문분야'
+        user_id : '작성자'
+        title: '제목'
+        budget: '예산'
+        budget_propose : '예산제안받음'
+        start_date : '시작일자'
+        end_date : '종료일자'
+        biddings_count: '입찰수'
+        enable : '보임'
+        updated_at: '수정일시'
+        created_at: '작성일시'
+      ad_content:
+        content: '내용'
+      ad_picture:
+        picture: '이미지'
+      ad_size:
+        size_id: '면적'
+      ad_floor:
+        floor_id: '층수'
+      ad_material:
+        material_id: '벽체'
+      address :
+        parent_address_id : '상위지역'
+        address_level_id : '주소단계'
+        title : '지역'
+        enable : '보임'
+        updated_at : '수정일시'
+        created_at : '생성일시'
+      address_level :
+        title : '지역단계'
+        enable : '보임'
+        updated_at : '수정일시'
+        created_at : '생성일시'
+      answer :
+        question_id : '질문'
+        user_id : '사용자'
+        title : '제목'
+        content : '네용'
+        enable : '보임'
+        updated_at : '수정일시'
+        created_at : '생성일시'
+      admin :
+        name : '이름'
+        email : '이메일'
+        password : '비밀번호'
+        password_confirmation : '비밀번호확인'
+        current_password : '현재비밀번호'
+        sign_in_count : '로그인수'
+        updated_at: '수정일시'
+        created_at: '생성일시'
+      admin_picture :
+        picture : '사진'
+      bidding :
+        ad_id : '공고'
+        company_id : '전문가, 업체'
+        company : '전문가, 업체'
+        budget : '제안예산'
+        accepted_at : '낙찰일'
+        updated_at: '수정일시'
+        created_at: '생성일시'
+      bidding_content :
+        content : '기타제안,전할말'
+      blog_category :
+        title : '분류명'
+        blogs_count : '해당블로그수'
+        enable : '보임'
+        updated_at : '수정일시'
+        created_at : '작성일시'
+      blog :
+        blog_category_id: '분류'
+        user_id : '작성자'
+        title : '제목'
+        content : '내용'
+        enable : '보임'
+        updated_at : '수정일시'
+        created_at : '작성일시'
+      blog_picture :
+        picture : '이미지'
+      charge_point:
+        title: '제목'
+        price : '가격'
+        point : '포인트'
+        enable: '보임'
+        updated_at: '수정일시'
+        created_at: '생성일시'
+      company :
+        user_id : '사용자이름'
+        title : '활동명,회사명'
+        phone : '연락처'
+        description : '한줄소개'
+        code : '사업자번호'
+        content : '상세소개'
+        start_time : '업무시작시간'
+        end_time : '업무종료시간'
+        biddings_count : '입찰횟수'
+        reviews_count : '받은리뷰갯수'
+        products_count : '등록제품갯수'
+        orders_count : '체결횟수'
+        enable: '보임'
+        updated_at: '수정일시'
+        created_at: '작성일시'
+      company_picture :
+        picture : '이미지'
+      company_pictures :
+        picture : '회사이미지'
+      company_code :
+        picture : '사업자등록증'
+      company_speciality:
+        speciality_id: '전문분야'
+      contact_category :
+        title : '분류명'
+        contacts_count : '해당문의수'
+        enable : '보임'
+        updated_at : '수정일시'
+        created_at : '생성일시'
+      contact :
+        contact_category_id : '상담문의분류'
+        title : '제목'
+        phone : '연락처'
+        enable : '보임'
+        updated_at : '수정일'
+        created_at : '작성일'
+      contact_content :
+        content : '내용'
+      blog_content :
+        content : '내용'
+      product_category :
+        title : '분류명'
+        order_no : '순서'
+        products_count : '해당상품수'
+        enable : '보임'
+        updated_at : '수정일시'
+        created_at : '생성일시'
+      product :
+        company_id : '판매자'
+        product_category_id: '상품분류'
+        title : '상품명'
+        price : '가격'
+        discount : '할인'
+        content : '내용'
+        order_no : '순서'
+        enable : '보임'
+        updated_at : '수정일시'
+        created_at : '작성일시'
+      product_picture :
+        picture : '이미지'
+      point :
+        point : '포인트'
+        updated_at : '수정일시'
+        created_at : '생성일시'
+      order :
+        enable : '유효'
+        title : '제목'
+        user_id : '주문자'
+        total_price : '총액'
+        updated_at : '수정일시'
+        created_at : '생성일시'
+      order_product :
+        order_id : '주문'
+        product_id : '상품'
+        quantity : '수량'
+      user:
+        name : '이름'
+        phone : '전화번호'
+        email : 'E-mail'
+        password : '비밀번호'
+        password_confirmation : '비밀번호확인'
+        point : '포인트'
+        birthday : '생일'
+        address : '주소'
+        remember_created_at: '로그인 기록된 시간'
+        remember_me: '기억하기'
+        sign_in_count: '로그인횟수'
+        enable : '보임'
+        updated_at: '수정일'
+        created_at: '가입일'
+      user_address :
+        user_id : '사용자'
+        postcode : '우편번호'
+        address : '주소'
+        address_detail : '주소상세'
+        enable : '보임'
+        updated_at: '수정일'
+        created_at: '가입일'
+      user_picture :
+        picture : '이미지'
+      faq_category :
+        title : '제목'
+        order_no : '순서'
+        faqs_count : '해당 FAQ수'
+        enable : '보임'
+        updated_at : '수정일'
+        created_at : '작성일'
+      faq :
+        faq_category_id : '분류'
+        title : '제목'
+        order_no : '순서'
+        enable : '보임'
+        updated_at : '수정일'
+        created_at : '작성일'
+      faq_content :
+        content : '내용'
+      speciality_category :
+        title : '제목'
+        specialities_count : '해당 전문분야수'
+        enable : '보임'
+        updated_at : '수정일'
+        created_at : '작성일'
+      speciality :
+        speciality_category_id : '분류'
+        title : '제목'
+        company_specialities_count : '해당 전문가,회사수'
+        ads_count : '해당 공고수'
+        order_no : '순서'
+        speciality_men : '전문분야노임'
+        enable : '보임'
+        updated_at : '수정일'
+        created_at : '작성일'
+      speciality_picture :
+        picture : '이미지'
+      speciality_man :
+        title : '제목'
+        pay : '시간당 노임'
+      material :
+        title : '제목'
+        price : '가격'
+        picture : '이미지'
+        enable : '보임'
+        updated_at : '수정일'
+        created_at : '작성일'
+      notice :
+        title : '제목'
+        enable : '보임'
+        updated_at : '수정일'
+        created_at : '작성일'
+      notice_content :
+        content : '내용'
+      notice_picture :
+        picture : '이미지'
+      review :
+        user_id : '작성자'
+        company_id : '작업자'
+        title : '제목'
+        enable : '보임'
+        rating : '별점'
+        updated_at : '수정일'
+        created_at : '작성일'
+      review_content :
+        content : '내용'
+      user_point_log:
+        user_id: '회원'
+        point: '포인트'
+        enable: '보임'
+        updated_at: '수정일'
+        created_at: '작성일'
+      reservation :
+        user_id : '회원'
+        title : '제목'
+        name : '이름'
+        enable : '보임'
+        visit_time : '방문일시'
+        updated_at : '수정일'
+        created_at : '작성일'
+      reservation_content :
+        content : '내용'
+      size :
+        title : '제목'
+        size : '면적'
+        enable : '보임'
+        updated_at : '수정일'
+        created_at : '작성일'
+      simulation_category :
+        title : '분류명'
+        order_no : '순서'
+        simulations_count : '해당적산해보기수'
+        enable : '보임'
+        updated_at : '수정일시'
+        created_at : '생성일시'
+      simulation :
+        simulation_category_id: '분류'
+        size_id : '사이즈'
+        title : '제목'
+        enable : '보임'
+        updated_at : '수정일'
+        created_at : '작성일'
+      simulation_picture :
+        picture : '이미지'
+      simulation_material :
+        simulation_id : '적산해보기'
+        material_id : '재료'
+        price : '가격'
+        enable : '보임'
+        updated_at : '수정일'
+        created_at : '작성일'
+      simulation_material_picture :
+        picture : '이미지'
+      slide:
+        notice_id : '공지사항'
+        title: '제목'
+        picture : '이미지'
+        link : '링크'
+        enable: '보임'
+        updated_at: '수정일'
+        created_at: '작성일'
+      slide_description:
+        description: '설명'
+        font_id : '글꼴'
+        color : '색상'
+        size : '크기'
+        position_h : '수평위치기준'
+        position_h_px: '수평위치'
+        position_v : '수직위치기준'
+        position_v_px: '수직위치'
+        updated_at: '수정일'
+        created_at: '작성일'
+      setting :
+        scroll_title : '흐르는 글씨'
+        updated_at: '수정일'
+        created_at: '작성일'
+      payment:
+        title : '제목'
+        payment_id: '결제ID'
+        payment_merchant_id : '결제번호'
+        payment_method : '결제방법'
+        amount : '총액'
+        status: '상태'
+        enable : '유효'
+        updated_at: '수정일'
+        created_at: '생성일시'
+      user_simulation_material :
+        simulation_material_id : '적산결과'
+        user_id : '신청자'
+        enable : '보임'
+        updated_at : '수정일'
+        created_at : '작성일'
+      question :
+        user_id : '작성자'
+        title : '제목'
+        answers_count : '답변'
+        content : '내용'
+        secret : '비밀글'
+        enable : '보임'
+        updated_at : '수정일'
+        created_at : '작성일'
+      question_content :
+        content : '내용'
+      request :
+        request_category_id : '상담문의분류'
+        title : '제목'
+        size : '면적'
+        address: ' 주소'
+        content : '내용'
+        enable : '보임'
+        updated_at : '수정일'
+        created_at : '작성일'
+      request_picture :
+        picture : '도면'
+      portfolio :
+        company_id : '회사,전문가'
+        title : '제목'
+        content : '내용'
+        enable : '보임'
+        updated_at: '수정일'
+        created_at: '작성일'
+      portfolio_picture :
+        picture : '이미지'
+    errors:
+      models :
+        ad :
+          attributes:
+            ad_category:
+              required : '주택분류 선택해주세요'
+            speciality:
+              required : '전문분야를 선택해주세요'
+        order :
+          attributes :
+            user :
+              required : '사용자를 입력해주세요'
+        product :
+          attributes :
+            user :
+              required : '사용자를 입력해주세요'
+        user :
+          attributes :
+            login_id :
+              not_found : '해당 이메일이 존재하지 않습니다'

@@ -1,0 +1,1 @@
+Rails::Html::WhiteListSanitizer.allowed_tags.add 'iframe'

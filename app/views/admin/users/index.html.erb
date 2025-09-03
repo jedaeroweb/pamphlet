@@ -24,7 +24,9 @@
 				<th>이름</th>
 				<th>전화번호</th>
 				<th>등록일</th>
-				<th><%=t(:manage) %></th>
+				<% if can?(:update, User) || can?(:delete, User) %>
+					<th class="text-center"><%= t(:manage) %></th>
+				<% end %>
 			</tr>
 		</thead>
 		<tbody>
