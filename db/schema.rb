@@ -131,6 +131,7 @@ ActiveRecord::Schema[7.1].define(version: 2022_08_29_171007) do
   end
 
   create_table "histories", force: :cascade do |t|
+    t.integer "user_id", null: false
     t.integer "year", null: false
     t.integer "month"
     t.string "title", limit: 60, null: false
@@ -138,6 +139,7 @@ ActiveRecord::Schema[7.1].define(version: 2022_08_29_171007) do
     t.boolean "enable", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_histories_on_user_id"
   end
 
   create_table "impressions", force: :cascade do |t|

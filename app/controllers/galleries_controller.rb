@@ -2,6 +2,13 @@ class GalleriesController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :show]
   before_action :set_gallery, only: [:show, :edit, :update, :destroy]
 
+  def initialize(*params)
+    super(*params)
+
+    @application_name=t(:application_name)
+    @controller_name= t(:gallery, scope: [:activerecord, :models])
+    @title=@controller_name
+  end
   # GET /galleries
   # GET /galleries.json
   def index

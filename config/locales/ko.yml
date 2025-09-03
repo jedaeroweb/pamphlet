@@ -395,7 +395,7 @@ ko:
         title : '제목'
       contact :
         contact_category_id : '분류'
-        name : '성명'
+        name : '이름'
         phone : '연락처'                
         email : '이메일'
         raw_content : '문의 및 기타 하실 말씀'
@@ -430,3 +430,6 @@ ko:
         enable : '보임'
         updated_at : '수정일'
         created_at : '작성일'
+      user :
+        nickname : '이름'
+        phone : '연락처'

@@ -11,8 +11,12 @@
 	<% end %>
 	<div class="form-group">
 		<%= f.label :year %><br />
-		<%= f.text_field :year, :class=>'form-control', :required=>'required' %>
-	</div>	
+		<%= f.select :year, options_for_select((Date.current.year - 100..Date.current.year).to_a.reverse, f.object.year), {}, class: 'form-control', required: true %>
+	</div>
+	<div class="form-group">
+		<%= f.label :month %><br />
+		<%= f.select :month, options_for_select((1..12).map { |m| [m, m] }, f.object.month), {}, class: 'form-control' %>
+	</div>
 	<div class="form-group">
 		<%= f.label :title %><br />
 		<%= f.text_field :title, :class=>'form-control', :required=>'required' %>

@@ -1,11 +1,13 @@
 <% breadcrumb :histories %>
 <section id="sl_history_index">
 		<h2>약력</h2>
-		<dl>
 			<% unless @histories.empty? %>
-			<% @histories.each do |history| %>			
+			<% @histories.each do |history| %>
+			<article class="media p-3 p-lg-5 rounded-4 lh-lg mb-3">
+				<dl>
 			<dt><%=history.year %></dt>
 			<dd>
+
 				<b><%=history.title %></b>
 				<%=simple_format(history.content) %>
 			<% if user_signed_in? %>
@@ -14,14 +16,12 @@
 					<%= link_to t(:link_edit), edit_history_path(history) %> &nbsp; | &nbsp; <%= link_to t(:link_delete), history, method: :delete, data: { confirm: t(:delete_confirm) } %>
 				</div>
 			<% end %>
-			<% end %>				
-			</dd>
+			<% end %>
+				</dd>
+			</article>
 			<% end %>
 			<% end %>
-		</dl>
-	<% if user_signed_in? %>
-	<% if current_user.admin? %>			
+	<% if admin_signed_in? %>
 		<%= link_to t(:link_new), new_history_path %>
 	<% end %>
-	<% end %>		
 </section>

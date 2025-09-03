@@ -1,4 +1,12 @@
 class LocationsController < ApplicationController
+  def initialize(*params)
+    super(*params)
+
+    @application_name=t(:application_name)
+    @controller_name= t(:location, scope: [:activerecord, :models])
+    @title=@controller_name
+  end
+
   # GET /intro
   # GET /intro.json  
   def index

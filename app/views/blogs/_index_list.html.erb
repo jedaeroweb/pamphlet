@@ -53,7 +53,7 @@
       </div>
     </div>
   </div>
-  <% if user_signed_in? %>
+  <% if admin_signed_in? %>
   <div class="col-12">
     <%=link_to t(:new_blog),new_blog_path,class: 'btn btn-primary btn-large' %>
   </div>

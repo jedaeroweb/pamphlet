@@ -2,6 +2,13 @@ class ContactsController < ApplicationController
   before_action :authenticate_user!, :except => [:new,:complete,:create, :show]
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
 
+  def initialize(*params)
+    super(*params)
+
+    @application_name=t(:application_name)
+    @controller_name= t(:contact, scope: [:activerecord, :models])
+    @title=@controller_name
+  end
   
   def complete
   end  

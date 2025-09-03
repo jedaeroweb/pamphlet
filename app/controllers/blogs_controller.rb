@@ -1,8 +1,15 @@
 class BlogsController < ApplicationController
-  #impressionist :actions => [:show]
+  impressionist :actions => [:show]
   before_action :authenticate_user!, :except => [:index,:show]
-  before_action :set_blog, only: [:show, :edit, :update, :destroy,:upvote, :downvote]
+  before_action :set_blog, only: [:show, :edit, :update, :destroy ]
 
+  def initialize(*params)
+    super(*params)
+
+    @application_name=t(:application_name)
+    @controller_name= t(:blog, scope: [:activerecord, :models])
+    @title=@controller_name
+  end
   # GET /blogs
   # GET /blogs.json
   def index
@@ -77,7 +84,7 @@ class BlogsController < ApplicationController
 
     respond_to do |format|
       if @blog.save
-        format.html { redirect_to @blog, notice: 'blog was successfully created.' }
+        format.html { redirect_to @blog, notice: t(:blog, scope: [:activerecord, :models])+t(:message_success_create) }
         format.json { render :show, status: :created, location: @blog }
       else
         @blog.build_blog_picture
@@ -93,7 +100,7 @@ class BlogsController < ApplicationController
   def update
     respond_to do |format|
       if @blog.update(blog_params)
-        format.html { redirect_to @blog, notice: 'blog was successfully updated.' }
+        format.html { redirect_to @blog, notice: t(:blog, scope: [:activerecord, :models])+t(:message_success_update) }
         format.json { render :show, status: :ok, location: @blog }
       else
         format.html { render :edit }
@@ -107,36 +114,10 @@ class BlogsController < ApplicationController
   def destroy
     @blog.destroy
     respond_to do |format|
-      format.html { redirect_to blogs_url, notice: 'blog was successfully destroyed.' }
+      format.html { redirect_to blogs_url, notice: t(:blog, scope: [:activerecord, :models])+t(:message_success_delete) }
       format.json { head :no_content }
     end
   end
-
-
-  def upvote
-    respond_to do |format|
-      if @blog.liked_by current_user
-        format.html { redirect_to blog_path(@blog), :notice => t(:message_success_recommend)}
-        format.json { render :json => {vote_up: @blog.cached_votes_up}}
-      else
-        format.html { render :action => "index" }
-        format.json { render :json => @blog.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-  def downvote
-    respond_to do |format|
-      if @blog.downvote_from current_user
-        format.html { redirect_to blog_path(@blog), :notice => t(:message_success_recommend)}
-        format.json { render :json => {vote_up: @blog.cached_votes_down}}
-      else
-        format.html { render :action => "index" }
-        format.json { render :json => @blog.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
 
   private
   # Use callbacks to share common setup or constraints between actions.
