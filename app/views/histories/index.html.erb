@@ -5,7 +5,12 @@
 			<% @histories.each do |history| %>
 			<article class="media p-3 p-lg-5 rounded-4 lh-lg mb-3">
 				<dl>
-			<dt><%=history.year %></dt>
+			<dt>
+				<%=history.year %><%=t(:year) %>
+				<% if history.month %>
+				<%= history.month %><%=t(:month) %>
+				<% end %>
+			</dt>
 			<dd>
 
 				<b><%=history.title %></b>

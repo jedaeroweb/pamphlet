@@ -55,7 +55,9 @@ ko:
   flag_true : '사용'
   flag_false : '중지'
   no_data : '글이 없습니다.'
-  all_category : '전체'  
+  all_category : '전체'
+  year: '년'
+  month: '월'
   
   home_main_title : 'I-Park(영통역)'
   home_main_description : '분양 6팀 정종호 과장'
