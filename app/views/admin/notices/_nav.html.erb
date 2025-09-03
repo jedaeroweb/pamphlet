@@ -4,12 +4,20 @@
     c_class = 'nav-link'
     d_class = 'nav-link'
 
-    if params[:controller] == 'admin/contacts'
+    if params[:controller] == 'admin/blogs'
       a_class += ' active'
     end
 
-    if params[:controller] == 'admin/contacts'
-      b_class += ' active'
+    if params[:controller] == 'admin/galleries'
+      n_class += ' active'
+    end
+
+    if params[:controller] == 'admin/histories'
+      c_class += ' active'
+    end
+
+    if params[:controller] == 'admin/notices'
+      d_class += ' active'
     end
 
 
@@ -17,8 +25,10 @@
   <div class="col-12">
     <nav class="sub-nav">
       <ul class="nav nav-pills">
-        <li class="nav-item"><%= link_to t(:notice, scope: [:activerecord, :models]), admin_notices_path, { :class => a_class } %></li>
-        <li class="nav-item"><%= link_to t(:contact, scope: [:activerecord, :models]), admin_contacts_path, { :class => b_class } %></li>
+        <li class="nav-item"><%= link_to t(:blog, scope: [:activerecord, :models]), admin_blogs_path, { :class => a_class } %></li>
+        <li class="nav-item"><%= link_to t(:gallery, scope: [:activerecord, :models]), admin_galleries_path, { :class => b_class } %></li>
+        <li class="nav-item"><%= link_to t(:history, scope: [:activerecord, :models]), admin_histories_path, { :class => c_class } %></li>
+        <li class="nav-item"><%= link_to t(:notice, scope: [:activerecord, :models]), admin_notices_path, { :class => d_class } %></li>
       </ul>
     </nav>
   </div>

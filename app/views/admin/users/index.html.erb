@@ -13,30 +13,42 @@
 		<col width="100px" />
 		<col />
 		<col width="70px" />
-		<col width="130px" />
+		<col width="210px" />
+		<% if can?(:update, User) || can?(:delete, User) %>
+			<col<%=manage_width(User) %>>
+		<% end %>
 	</colgroup>
 		<thead class="thead-default">
 			<tr>
+				<th>고객번호</th>
 				<th>이름</th>
-				<th>제목</th>
-				<th>조회</th>
+				<th>전화번호</th>
 				<th>등록일</th>
+				<th><%=t(:manage) %></th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr class="none">
-				<td><p class="sl_name"></p></td>
-				<td><p><a class="sl_show_link" href="show.php"></a></p></td>
-				<td class="sl_right"><p class="sl_count"></p></td>
-				<td class="sl_right"><p class="sl_registered_date"></p></td>
-			</tr>
 			<% unless @user_count.zero? %>
 			<% @users.each do |user| %>
 			<tr>
-				<td><p class="sl_name"><%= user.id %></p></td>
-				<td><p><%= link_to user.nickname, admin_user_path(user)  %></p></td>
-				<td class="sl_right"></td>
-				<td class="sl_right"><p class="sl_registered_date"><%=user.created_at.to_date %></p></td>
+				<td><%= user.id %></td>
+				<td><%= link_to user.nickname, admin_user_path(user)  %></td>
+				<td><%= link_to user.phone, admin_user_path(user)  %></td>
+				<td><%= I18n.l user.created_at.to_date, :format => :long %></td>
+				<% if can?(:update, user) or can?(:delete, user) %>
+					<td class="text-right">
+						<% if can? :update, user %>
+							<%= link_to edit_admin_user_path(user), :class => "btn btn-secondary" do %>
+								<%= t(:edit) %>
+							<% end %>
+						<% end %>
+						<% if can? :delete, user %>
+							<%= link_to admin_user_path(user), :method => :delete, :data => { :confirm => t(:delete_confirm) }, :class => "btn btn-danger" do %>
+								<%= t(:delete) %>
+							<% end %>
+						<% end %>
+					</td>
+				<% end %>
 			</tr>
 			<% end %>			
 			<% else %>
