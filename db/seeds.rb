@@ -1,5 +1,5 @@
-User.create!(id: 1, email:'admin@jedaeroweb.co.kr',:nickname=>'관리자',:password => 'a12345', :password_confirmation => 'a12345', user_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "1.jpg")) },:admin=>true)
-User.create!(id: 2, email:'user@jedaeroweb.co.kr',:nickname=>'잠자는사자',:password => 'a12345', :password_confirmation => 'a12345', user_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "2.jpg")) })
+User.create!(id: 1, email:'admin@jedaeroweb.co.kr',:nickname=>'관리자', phone: '031-204-3410', :password => 'a12345', :password_confirmation => 'a12345', user_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "1.jpg")) },:admin=>true)
+User.create!(id: 2, email:'user@jedaeroweb.co.kr',:nickname=>'잠자는사자', phone: '031-204-3410', :password => 'a12345', :password_confirmation => 'a12345', user_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "2.jpg")) })
 
 GalleryCategory.create!(title: 'A,B,C,D 타입')
 GalleryCategory.create!(title: 'E,F 타입')

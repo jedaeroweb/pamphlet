@@ -1,35 +1,38 @@
-<article class="private_management">
-	<h3>개인정보보호정책 <span id="detail_show">자세히 보기</span></h3>
-	<p class="none">당사는 고객님의 정보를 중요시하며 "정보통신망 이용촉진 및 정보보호등에 관한 법률"을 준수합니다.<br />
-		수집된 고객정보는 고객여러분께 최적의 서비스를 제공하기 위한 목적으로 활용됩니다.
-	</p>
-	<dl class="none">
-		<dt>고객정보의 이용목적</dt>
-		<dd></dd>
-		<dt>수집항목</dt>
-		<dd>성명,연락처, 주소</dd>
-		<dt>고객정보 보유및 이용기간</dt>
-		<dd>"영통역 아이파크" 분양완료까지</dd>
-		<dt>고객정보 수집 및 이용 동의 철회</dt>
-		<dd>고객정보제공 및 이용을 원하지 않을경우 철회 요청을 할수 있으며 철회시는 분양관련 정보제공의 혜택을 받을수 없습니다.</dd>				
-	</dl>
-</article>
-<%= form_for(@contact) do |f| %>
-	<% if @contact.errors.any? %>
-	<div id="error_explanation">
-		<h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
-		<ul>
-			<% @contact.errors.full_messages.each do |msg| %>
-			<li><%= msg %></li>
-			<% end %>
-		</ul>
-	</div>
+<%= form_with model: contact, data: { turbo_frame: "_top" } do |f| %>
+	<% if contact.errors.any? %>
+		<div id="error_explanation" class="alert alert-danger" role="alert">
+			<button type="button" class="btn-close close" data-bs-dismiss="alert" aria-label="Close"></button>
+			<h2><%= pluralize(contact.errors.count, "개의 문제") %>로 진행할 수 없습니다.</h2>
+			<ul>
+				<% contact.errors.full_messages.each do |msg| %>
+					<li>
+						<%= msg %>
+					</li>
+				<% end %>
+			</ul>
+		</div>
 	<% end %>
+	<article class="private_management">
+		<h3>개인정보보호정책 <span id="detail_show">자세히 보기</span></h3>
+		<p class="none">당사는 고객님의 정보를 중요시하며 "정보통신망 이용촉진 및 정보보호등에 관한 법률"을 준수합니다.<br />
+			수집된 고객정보는 고객여러분께 최적의 서비스를 제공하기 위한 목적으로 활용됩니다.
+		</p>
+		<dl class="none">
+			<dt>고객정보의 이용목적</dt>
+			<dd></dd>
+			<dt>수집항목</dt>
+			<dd>성명,연락처, 주소</dd>
+			<dt>고객정보 보유및 이용기간</dt>
+			<dd>"영통역 아이파크" 분양완료까지</dd>
+			<dt>고객정보 수집 및 이용 동의 철회</dt>
+			<dd>고객정보제공 및 이용을 원하지 않을경우 철회 요청을 할수 있으며 철회시는 분양관련 정보제공의 혜택을 받을수 없습니다.</dd>
+		</dl>
+	</article>
 	<div class="form-group sl_radio">
 		<input type="checkbox" id="check_s" required="required" /><label for="check_s" class="form-label fs-5">개인정보보호정책 동의</label>
 	</div>	
 	<div class="form-group sl_radio">
-	<% @contact_categories.each_with_index do |item,index| %>
+	<% ContactCategory.where(enable: true).each_with_index do |item,index| %>
 	<% if(index.zero?) %>
   <%= f.radio_button :contact_category_id, item.id,:checked=>true %><%= f.label :contact_category_id,item.title,:value=>item.id,class: 'fs-5' %>
 	<% else %>	
@@ -37,24 +40,24 @@
   <% end %>
 	<% end %>
 	</div>
+	<% unless user_signed_in? %>
 	<div class="form-group">
 		<%= f.label :name, class: 'form-label fs-5' %>
-		<%= f.text_field :name, :class=>'form-control form-control-lg', :required=>'required' %>
+		<%= f.text_field :name, :class=>'form-control form-control-lg' %>
 	</div>
 	<div class="form-group">
 		<%= f.label :phone, class: 'form-label fs-5' %>
-		<%= f.text_field :phone, :class=>'form-control form-control-lg', :required=>'required' %>
+		<%= f.text_field :phone, :class=>'form-control form-control-lg' %>
 	</div>
 	<div class="form-group">
-		<%= f.label :address, class: 'form-label fs-5' %>
-		<%= f.text_field :address, :class=>'form-control form-control-lg' %>
-	</div>
-	<%= f.fields_for :contact_content do |c| %>
-	<div class="form-group">
-		<%= c.label t(:contact_content),:for=>'sl_content', class: 'form-label fs-5' %>
-  	<%= c.text_area :content, :class=>'form-control',  :id => "sl_content" %>
+		<%= f.label :email, class: 'form-label fs-5' %>(선택)
+		<%= f.text_field :email, :class=>'form-control form-control-lg' %>
 	</div>
 	<% end %>
+	<div class="col-12 form-group">
+		<%= f.label :raw_content, class: 'form-label fs-5' %>(선택)
+		<%= f.text_area :raw_content, :class=>'form-control form-control-lg', style: 'min-height:20em' %>
+	</div>
 	<div class="d-grid gap-2">
 		<%= f.submit :class => 'btn btn-lg btn-primary' %>
 	</div>

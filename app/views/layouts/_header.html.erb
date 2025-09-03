@@ -1,16 +1,28 @@
 <header>
 	<div class="container">
+		<% if user_signed_in? %>
+			<div id="top-menu" class="row">
+				<div class="col-12">
+					<ul>
+						<% if user_signed_in? %>
+							<li>
+								<%= link_to edit_user_registration_path do %>
+									<span id="username"><%= current_user.nickname %></span>님 환영합니다.
+								<% end %>
+							</li>
+							<li><%= link_to t(:logout), destroy_user_session_path, {method: 'delete' } %></li>
+						<% else %>
+							<li><%= link_to t(:login), new_user_session_path %></li>
+						<% end %>
+					</ul>
+				</div>
+			</div>
+		<% end %>
 		<div class="row">
 			<h1 class="col-12 col-lg-3 col-xl-4"><%=link_to raw('<span class="red">I</span>PARK<span class="small">영통역</span>'),root_path %></h1>
-			<% if user_signed_in? %>
-				<ul id="top_menu">
-					<li><%= link_to current_user.nickname,edit_user_registration_path %><%= t(:welcome)%></li>
-					<li><%= link_to t(:logout),destroy_user_session_path, method: 'delete' %></li>
-				</ul>
-			<% end %>
 			<nav class="col-12 col-lg-9 col-xl-8">
 				<ul class="nav nav-pills">
-					<li role="presentation" class="dropdown <% if params[:controller]=='intro' || params[:controller]=='teams' || params[:controller]=='histories' || params[:controller]=='locations' %> active"<% end %>">
+					<li role="presentation" class="dropdown <% if params[:controller]=='intro' ||  params[:controller]=='histories' || params[:controller]=='locations' %> active"<% end %>">
 						<%= link_to '#', { class: 'dropdown-toggle d-flex align-items-center gap-2 main-menu',
 															 role: "button",
 															 'data-bs-toggle': "dropdown",

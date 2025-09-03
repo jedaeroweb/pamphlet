@@ -4,6 +4,7 @@ class CreateDeviseToUsers < ActiveRecord::Migration[6.0]
       ## Database authenticatable
       t.string :email,  :null => false, :limit=>100
       t.string :nickname, :null => false, :limit=>60
+      t.string :phone, :null => false, :limit=>60
       t.string :encrypted_password, :null => false, :limit=>100
       t.string :description, :limit=>150
 
@@ -32,6 +33,7 @@ class CreateDeviseToUsers < ActiveRecord::Migration[6.0]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
+      t.integer :contacts_count, null: false, default: 0
       t.integer :user_pictures_count, null: false, default: 0
 
       ## Token authenticatable

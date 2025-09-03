@@ -19,7 +19,7 @@ ko:
   chineses: '중국어'
   change_language: '언어바꾸기'
 
-
+  name : '나야나'
   email  :  "이메일"
   password : "비밀번호"
   login_p_email : "이메일을 써주세요"
@@ -36,10 +36,9 @@ ko:
   auto: '자동'
 
   site_url: 'pamphlet.jedaeroweb.co.kr'
-  site_full_url: 'https://amphlet.jedaeroweb.co.kr'
+  site_full_url: 'https://pamphlet.jedaeroweb.co.kr'
   email_webmaster: 'admin@jedaeroweb.co.kr'
 
-  contact_content : '문의 및 기타 하실말씀'
   home : '홈'
   home_title : 'I-Park(영통역)'
   welcome : '님 환영합니다.'
@@ -398,8 +397,8 @@ ko:
         contact_category_id : '분류'
         name : '성명'
         phone : '연락처'                
-        address : '주소'
-        content : '내용'        
+        email : '이메일'
+        raw_content : '문의 및 기타 하실 말씀'
       contact_content :
         content : '내용'
       blog_category :

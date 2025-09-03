@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatables
-  validates_presence_of :nickname
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
+  validates_presence_of :nickname, :phone
   validates_uniqueness_of :email
   has_many :notice, :dependent=> :destroy
   has_many :blog, :dependent=> :destroy

@@ -158,6 +158,11 @@ header nav ul.nav> li{
   margin-right: 20px
 }
 
+#top-menu ul {margin:0 auto;padding:0;list-style:none;z-index:7;text-align: right;float:right;width:100%;}
+#top-menu li {list-style:none;float:left;margin:0;padding:0;line-height:100%}
+#top-menu li#user-info {margin-right:35px}
+#top-menu li a {text-decoration: none;vertical-align: bottom;display:block;padding:5px;}
+#top-menu li a i {text-align: center;vertical-align: bottom;margin-right:5px}
 
 #sl_blog_categories ul li.active a {font-weight:bold}
 
