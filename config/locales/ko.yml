@@ -29,6 +29,7 @@ ko:
   remember_me : "기억하기"
   new_user: '회원가입'
   delete_user: '회원탈퇴'
+  manage : '관리'
 
   theme: '모양'
   light: '밝은'
@@ -62,7 +63,7 @@ ko:
   home_main_title : 'I-Park(영통역)'
   home_main_description : '분양 6팀 정종호 과장'
 
-  there_are_n_users: "사용자가 <strong class=\"mark\">%{count}명</strong> 있습니다"
+  there_are_n_users: "고객이 <strong class=\"mark\">%{count}명</strong> 있습니다"
   there_are_n_notices: "공지사항이 <strong class=\"mark\">%{count}개</strong> 있습니다"
   there_are_n_contacts : "문의가 <strong class=\"mark\">%{count}개</strong> 있습니다"
   there_are_n_blogs : "블로그가 <strong class=\"mark\">%{count}개</strong> 있습니다"
@@ -378,6 +379,7 @@ ko:
       blog : '블로그'
       notice : '공지사항'
       contact : '고객등록,문의'
+      user : '고객'
       history : '약력'
       about : '사이트 소개'
     attributes :
@@ -401,6 +403,8 @@ ko:
         phone : '연락처'                
         email : '이메일'
         raw_content : '문의 및 기타 하실 말씀'
+        updated_at : '수정일'
+        created_at : '작성일'
       contact_content :
         content : '내용'
       blog_category :

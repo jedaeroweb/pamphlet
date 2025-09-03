@@ -1,9 +1,9 @@
 <header class="row">
   <div class="col-12">
-    <% if ['admin/blogs','admin/blog_categories'].include?(params[:controller]) %>
-      <%= render 'admin/blogs/nav' %>
+    <% if ['admin/contacts','admin/users'].include?(params[:controller]) %>
+      <%= render 'admin/contacts/nav' %>
     <% end %>
-    <% if ['admin/notices','admin/contacts','admin/questions','admin/answers','admin/faq_categories','admin/faqs','admin/reviews','admin/reservations'].include?(params[:controller]) %>
+    <% if ['admin/notices','admin/blogs','admin/galleries'].include?(params[:controller]) %>
       <%= render 'admin/notices/nav' %>
     <% end %>
     <ul id="top-menu">

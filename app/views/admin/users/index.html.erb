@@ -1,17 +1,26 @@
-<section id="admin_question_index" class="table-responsive">
-<table width="100%" cellpadding="0" cellspacing="0" class="table table-striped table-hover">
+<div class="col-12">
+	<h2 class="float-left hidden-title"><%= t(:contact_list) %></h2>
+	<div class="float-right">
+		<p class="summary">
+			<span id="list_count" style="display:none"><%=@user_count %></span>
+			<%=raw t(:there_are_n_users,count: @user_count) %>
+		</p>
+	</div>
+</div>
+<article class="col-12">
+	<table id="prepare_list" class="table table-striped table-hover">
 	<colgroup>
 		<col width="100px" />
 		<col />
 		<col width="70px" />
 		<col width="130px" />
 	</colgroup>
-	<thead>
+		<thead class="thead-default">
 			<tr>
-				<th><p class="sl_name">이름</p></th>
-				<th><p class="sl_title">제목</p></th>
-				<th class="sl_right"><p class="sl_count">조회</p></th>
-				<th class="sl_right"><p class="sl_registered_date">등록일</p></th>
+				<th>이름</th>
+				<th>제목</th>
+				<th>조회</th>
+				<th>등록일</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -21,12 +30,12 @@
 				<td class="sl_right"><p class="sl_count"></p></td>
 				<td class="sl_right"><p class="sl_registered_date"></p></td>
 			</tr>
-			<% if @admin_users.empty? %>
-			<% @admin_users.each do |user| %>
+			<% unless @user_count.zero? %>
+			<% @users.each do |user| %>
 			<tr>
-				<td><p class="sl_name"><%= user.user.name %></p></td>
-				<td><p><%= link_to user.title, user  %></p></td>
-				<td class="sl_right"><p class="sl_count"><%= user.impressionist_count(:filter=>:ip_address) %></p></td>
+				<td><p class="sl_name"><%= user.id %></p></td>
+				<td><p><%= link_to user.nickname, admin_user_path(user)  %></p></td>
+				<td class="sl_right"></td>
 				<td class="sl_right"><p class="sl_registered_date"><%=user.created_at.to_date %></p></td>
 			</tr>
 			<% end %>			
@@ -37,11 +46,7 @@
 			<% end %>
 </table>
 <div id="sl_bottom_menu">
-	<% if user_signed_in? %>
-	<% if current_user.admin? %>			
-		<%= link_to '글쓰기', new_admin_user_path %>
-	<% end %>
-	<% end %>
-	<%= paginate @admin_users %>
+	<%= link_to t(:add), new_admin_contact_path, :class => "btn btn-primary" %>
+	<%= paginate @users %>
 </div>
-</section>
+</article>

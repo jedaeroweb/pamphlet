@@ -6,7 +6,7 @@ class Admin::UsersController < Admin::AdminController
   def index
     params[:per_page] = 10 unless params[:per_page].present?
 
-    condition = {}
+    condition = {enable: true, admin: false}
 
     like = false
 
@@ -26,10 +26,10 @@ class Admin::UsersController < Admin::AdminController
 
     if like
       @user_count = User.where(condition).where(condition_sql, '%' + params[:search_word].strip + '%').count
-      @users = User.select('users.*').where(condition).where(condition_sql, '%' + params[:search_word].strip + '%').page(params[:page]).per(params[:per_page]).order('id desc')
+      @users = User.where(condition).where(condition_sql, '%' + params[:search_word].strip + '%').page(params[:page]).per(params[:per_page]).order('id desc')
     else
       @user_count = User.where(condition).count
-      @users = User.select('users.*').where(condition).page(params[:page]).per(params[:per_page]).order('id desc')
+      @users = User.where(condition).page(params[:page]).per(params[:per_page]).order('id desc')
     end
 
     respond_to do |format|

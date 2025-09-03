@@ -1,24 +1,24 @@
 <div class="col-12">
   <h2 class="float-left hidden-title"><%= t(:contact_list) %></h2>
-      <div class="float-right">
-        <p class="summary">
-          <span id="list_count" style="display:none"><%=@contact_count %></span>
+  <div class="float-right">
+    <p class="summary">
+      <span id="list_count" style="display:none"><%=@contact_count %></span>
           <%=raw t(:there_are_n_contacts,count: @contact_count) %>
         </p>
       </div>
-    </div>
+</div>
     <article class="col-12">
       <table id="prepare_list" class="table table-striped table-hover">
         <colgroup>
           <col>
-          <col style="width:200px">
+          <col style="width:220px">
           <% if can?(:update, Contact) || can?(:delete, Contact) %>
             <col<%=manage_width(Contact) %>>
           <% end %>
         </colgroup>
         <thead class="thead-default">
         <tr>
-          <th><%= t(:title,scope:[:activerecord,:attributes,:contact]) %></th>
+          <th><%= t(:nickname,scope:[:activerecord,:attributes,:user]) %></th>
           <th class="text-right"><%= t(:created_at,scope:[:activerecord,:attributes,:contact]) %></th>
           <% if can?(:update, Contact) || can?(:delete, Contact) %>
             <th class="text-center"><%= t(:manage) %></th>
@@ -29,7 +29,7 @@
         <% unless @contact_count.zero? %>
           <% @contacts.each_with_index do |contact,index| %>
             <tr>
-              <td><%= link_to contact.title,admin_contact_path(contact) %></td>
+              <td><%= link_to contact.user.nickname,admin_contact_path(contact) %></td>
               <td class="text-right"><%= I18n.l contact.created_at.to_date, :format => :long %></td>
               <% if can?(:update, contact) or can?(:delete, contact) %>
                 <td class="text-right">

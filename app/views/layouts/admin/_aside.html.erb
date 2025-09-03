@@ -3,10 +3,10 @@
   <nav>
     <ul class="nav">
       <li class="nav-item
-            <% if ['admin/contacts'].include?(params[:controller]) %> active
+            <% if ['admin/contacts','admin/users'].include?(params[:controller]) %> active
             <% end %>">
         <%= link_to admin_contacts_path, :class => "nav-link" do %>
-          <i class="material-icons">person</i><span><%= t(:user, scope: [:activerecord, :models]) %></span>
+          <i class="material-icons">payment</i><span><%= t(:contact, scope: [:activerecord, :models]) %></span>
         <% end %>
       </li>
 
@@ -14,7 +14,7 @@
             <% if ['admin/notices'].include?(params[:controller]) %> active
             <% end %>">
         <%= link_to admin_notices_path, :class => "nav-link" do %>
-          <i class="material-icons">people</i><span><%= t(:menu_community) %></span>
+          <i class="material-icons">settings</i><span><%= t(:menu_community) %></span>
         <% end %>
       </li>
 
