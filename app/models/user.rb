@@ -7,6 +7,10 @@ class User < ApplicationRecord
   has_one :user_picture, dependent: :destroy
   accepts_nested_attributes_for :user_picture, allow_destroy: true
 
+  def remember_me
+    super || false
+  end
+
   def admin?
     admin
   end

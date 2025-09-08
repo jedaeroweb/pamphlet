@@ -11,6 +11,9 @@ this application is composed of [Rails](http://rubyonrails.org/)(user-pages,admi
 ## Demo
 [demo page](https://pamphlet.jedaeroweb.co.kr)
 
+[demo admin page](https://pamphlet.jedaeroweb.co.kr/admin)
+admin / id=admin@jedaeroweb.co.kr password=a12345 
+
 ## License
 
 MIT, All Free

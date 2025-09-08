@@ -19,13 +19,13 @@
 		</li>
 	<% end %>
 </ol>
-<div id="sl-gallery" class="row" <% if gallery %>itemscope itemtype="http://schema.org/ImageObject"<% end %>  data-controller="hello">
+<div id="sl-gallery" class="row" data-controller="hello">
 	<% if gallery %>
 		<div id="sl_gallery_left" class="col-12 col-lg-7">
-			<%=link_to gallery.photo.to_s,{:title=>gallery.title,:class=>'simple_image',:'data-fancybox'=>"gallery" } do %>
+			<%=link_to gallery.photo.to_s,{:title=>gallery.title, :'data-fancybox'=>"gallery" } do %>
 				<figure>
-					<%= image_tag sl_get_thumb(gallery.photo.to_s,'large'),:class=>'img-responsive w-100',:itemprop=>"contentURL" %>
-					<figcaption id="gallery<%= gallery.id %>_img<%= gallery.id %>_span" class="image_caption" itemprop="name">
+					<%= image_tag sl_get_thumb(gallery.photo.to_s,'large'),:class=>'img-responsive w-100' %>
+					<figcaption id="gallery<%= gallery.id %>_img<%= gallery.id %>_span" class="image_caption">
 						<%= gallery.title %>
 					</figcaption>
 				</figure>

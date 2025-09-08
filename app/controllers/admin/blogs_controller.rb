@@ -54,7 +54,7 @@ class Admin::BlogsController < Admin::AdminController
 
     respond_to do |format|
       if @blog.save
-        format.html { redirect_to [:admin, @blog], notice: t(:message_success_create) }
+        format.html { redirect_to [:admin, @blog], notice: t(:blog, scope: [:activerecord, :models]) +t(:message_success_create) }
         format.json { render :show, status: :created, location: @blog }
       else
         @blog.build_blog_picture
@@ -70,7 +70,7 @@ class Admin::BlogsController < Admin::AdminController
   def update
     respond_to do |format|
       if @blog.update(blog_params)
-        format.html { redirect_to [:admin, @blog], notice: t(:message_success_update) }
+        format.html { redirect_to [:admin, @blog], notice: t(:blog, scope: [:activerecord, :models]) +t(:message_success_update) }
         format.json { render :show, status: :ok, location: @blog }
       else
         format.html { render action: 'edit' }

@@ -1,6 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 import { Modal } from "bootstrap"
-import { Fancybox } from "fancybox";
+import { Fancybox } from "@fancyapps/ui"
 
 export default class extends Controller {
     static targets = ["modal", "galleryImage", "blogImage"]  // 타겟 정의 추가
@@ -16,9 +16,7 @@ export default class extends Controller {
         this.loadGalleryImages()
         this.loadBlogImages()
 
-        Fancybox.bind(this.element.querySelectorAll('[data-fancybox="gallery"]'), {
-            // Fancybox 옵션을 여기에 추가할 수 있습니다
-        })
+        Fancybox.bind('[data-fancybox="gallery"]', {})
     }
 
         disconnect() {
