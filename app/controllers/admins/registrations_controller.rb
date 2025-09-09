@@ -1,4 +1,5 @@
 class Admins::RegistrationsController < Devise::RegistrationsController
+  before_action :authenticate_admin!
   layout 'admin/login'
   # GET /admins
   # GET /admins.json
