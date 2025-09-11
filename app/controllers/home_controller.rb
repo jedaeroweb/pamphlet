@@ -12,6 +12,10 @@ class HomeController < ApplicationController
     render layout: false  # 레이아웃 없이 내용만 렌더링
   end
 
+  def privacy
+    render layout: false  # 레이아웃 없이 내용만 렌더링
+  end
+
   def popup
     @meta_description=t(:meta_description_popup)  
   end

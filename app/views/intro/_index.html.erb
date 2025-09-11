@@ -38,7 +38,7 @@
 		</div>
 	</article>
 	<article class="article2 media p-3 p-lg-5 rounded-4 lh-lg">
-		<%=image_tag('intro1.jpg',:class=>'img-responsive img-fluid w-100',:alt=>'조감도')  %>
+		<%=image_tag('intro1.jpg',:class=>'img-responsive img-fluid w-100',loading: 'lazy',:alt=>'조감도')  %>
 		<table>
 			<thead>
 				<tr>
@@ -109,8 +109,8 @@
 		</table>
 	</article>
 	<article id="article_location_premium" class="media p-3 p-lg-5 rounded-4 lh-lg">
-		<%=image_tag('intro2.jpg',:id=>'smap',:class=>'img-responsive img-fluid w-100',:alt=>'주변인프라')  %>
-		<%=image_tag('intro3.jpg',:id=>'smap2',:class=>'img-responsive',:alt=>'약도') %>
+		<%=image_tag('intro2.jpg',:id=>'smap',:class=>'img-fluid w-100',loading: 'lazy',:alt=>'주변인프라')  %>
+		<%=image_tag('intro3.jpg',:id=>'smap2',:class=>'img-fluid',loading: 'lazy',:alt=>'약도') %>
 		<div class="row">
 		<div class="fright col-xs-12">
 		<hgroup>
@@ -124,8 +124,8 @@
 			<li>1만 5천여명의 학생과 직원이 상주하는 경희국제 캠퍼스</li>
 		</ul>
 		<ul class="images">
-			<li class="col-xs-6"><%=image_tag('homeplus.jpg',:class=>'img-responsive',:alt=>'홈플러스') %></li>
-			<li class="col-xs-6 fleft"><%=image_tag('samsung.jpg',:class=>'img-responsive',:alt=>'삼성') %></li>			
+			<li class="col-xs-6"><%=image_tag('homeplus.jpg',:class=>'img-fluid w-100',loading: 'lazy',:alt=>'홈플러스') %></li>
+			<li class="col-xs-6 fleft"><%=image_tag('samsung.jpg',:class=>'img-fluid w-100',loading: 'lazy',:alt=>'삼성') %></li>
 		</ul>	
 		</div>
 		</div>
