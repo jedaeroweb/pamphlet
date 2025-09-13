@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'home/demo', to: 'home#demo'
   get '/privacy', to: 'home#privacy'
+  get 'feed',:to=>'home#feed'
 
   # Admin 인증 라우트
   devise_for :admins,

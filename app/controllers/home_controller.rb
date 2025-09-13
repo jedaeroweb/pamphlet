@@ -16,6 +16,13 @@ class HomeController < ApplicationController
     render layout: false  # 레이아웃 없이 내용만 렌더링
   end
 
+  def feed
+    @blogs = Blog.all.where(:enable=>true)
+    respond_to do |format|
+      format.rss { render :layout => false }
+    end
+  end
+
   def popup
     @meta_description=t(:meta_description_popup)  
   end
