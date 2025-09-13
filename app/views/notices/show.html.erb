@@ -1,13 +1,13 @@
 <% breadcrumb :notice,@notice %>
 <div id="show-notice">
   <div class="row">
-    <article class="col-12" itemscope itemprop="article" itemtype="http://schema.org/Article">
+    <article class="col-12">
       <div class="sl_content_header">
-        <h3 itemprop="name"><%= @notice.title %></h3>
+        <h3><%= @notice.title %></h3>
         <p class="text-end"><%= t(:created_at, scope: [:activerecord, :attributes, :notice]) %> : <%= I18n.l @notice.created_at.to_date, :format => :long %></p>
       </div>
       <div class="sl_content_main">
-        <div class="sl_content_text" itemprop="text"><%=simple_format sanitize(@notice.content.to_s.gsub(/\n/, '<br />'), :tags => %w(br img a)) %></div>
+        <div class="sl_content_text"><%=simple_format sanitize(@notice.content.to_s.gsub(/\n/, '<br />'), :tags => %w(br img a)) %></div>
       </div>
     </article>
   </div>
