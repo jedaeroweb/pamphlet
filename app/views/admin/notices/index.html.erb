@@ -34,9 +34,17 @@
           <% @notices.each_with_index do |notice,index| %>
             <tr>
               <td>
-                <div class="custom-control custom-switch">
-                  <input type="checkbox" class="custom-control-input" id="notice_display<%=index %>" value="<%=notice.id %>" <% if notice.enable %> checked<% end %>>
-                  <label class="custom-control-label" for="notice_display<%=index %>"><% if notice.enable %> <%=t(:display) %><% else %><%=t(:hidden) %><% end %> </label>
+                <div class="form-check form-switch">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="notice_display<%= index %>"
+                    value="<%= notice.id %>"
+                    <% if notice.enable %> checked <% end %>
+                  >
+                  <label class="form-check-label" for="notice_display<%= index %>">
+                    <% if notice.enable %> <%= t(:display) %> <% else %> <%= t(:hidden) %> <% end %>
+                  </label>
                 </div>
               </td>
               <td><%= link_to notice.title,admin_notice_path(notice) %></td>

@@ -1,7 +1,7 @@
 ko:
   application_name : 'IPark(영통역) / 6팀'
   service_name : 'IPark(영통역) / 6팀'
-  meta_description : 'IPark 영통역 오피스텔 분양의 관한 모든것'
+  meta_description : '무료 분양 페이지, 제대로웹'
   meta_description_intro : 'IPark 영통역 오피스텔 분양' 
   meta_description_location : 'IPark 영통역 오피스텔 찾아오시는 길 소개'
   meta_description_team : 'IPark 영통역 오피스텔 분양의 드림팀(6팀)'  
@@ -30,6 +30,8 @@ ko:
   new_user: '회원가입'
   delete_user: '회원탈퇴'
   manage : '관리'
+  display: '보임'
+  hidden: '숨김'
 
   theme: '모양'
   light: '밝은'
@@ -65,12 +67,7 @@ ko:
   home_main_title : 'I-Park(영통역)'
   home_main_description : '분양 6팀 정종호 과장'
 
-  there_are_n_users: "고객이 <strong class=\"mark\">%{count}명</strong> 있습니다"
-  there_are_n_notices: "공지사항이 <strong class=\"mark\">%{count}개</strong> 있습니다"
-  there_are_n_contacts : "문의가 <strong class=\"mark\">%{count}개</strong> 있습니다"
-  there_are_n_blogs : "블로그가 <strong class=\"mark\">%{count}개</strong> 있습니다"
-  there_are_n_galleries : "사진이 <strong class=\"mark\">%{count}개</strong> 있습니다"
-  there_are_n_histories : "약력이 <strong class=\"mark\">%{count}개</strong> 있습니다"
+
 
   success_title : '축하합니다!!'  
   message_success_create : '이(가) 성공적으로  등록되었습니다.'
@@ -84,10 +81,6 @@ ko:
   label_count : '조회수'
   label_comment : '댓글수'
   label_answer : '답변여부'
-  label_photo : '사진'
-  label_manage : '관리'
-  label_created_at : '등록일시'
-  label_updated_at : '수정일시'
 
   action_index : '목록'
   action_show : '상세'
@@ -106,9 +99,14 @@ ko:
   add: "신규"
   edit: "수정"
   delete: "삭제"
-  manage: '관리'
   share: '공유하기'
 
+  there_are_n_users: "고객이 <strong class=\"mark\">%{count}명</strong> 있습니다"
+  there_are_n_notices: "공지사항이 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_contacts : "문의가 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_blogs : "블로그가 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_galleries : "사진이 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_histories : "약력이 <strong class=\"mark\">%{count}개</strong> 있습니다"
   
   admin :
     application_address : 'SL web factory'

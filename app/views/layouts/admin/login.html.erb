@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<%=I18n.locale %>">
+<html lang="<%= I18n.locale %>" data-bs-theme="auto">
 <head>
   <meta charset="utf-8">
   <title><%=t(:service_name)%></title>
@@ -7,6 +7,7 @@
   <meta name="author" content="Sleeping-Lion">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <%= stylesheet_link_tag "admin/application", :media => "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "actiontext", :media => "all", "data-turbolinks-track" => true %>
   <%= favicon_link_tag 'favicon.ico' %>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
