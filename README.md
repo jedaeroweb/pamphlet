@@ -54,8 +54,8 @@ admin / id=admin@jedaeroweb.co.kr password=a12345
 ## 🚀 Getting Started
 
 ```bash
-git clone https://github.com/yourname/rails-pamphlet-site.git
-cd rails-pamphlet-site
+git clone https://github.com/jedaeroweb/pamphlet.git
+cd pamphlet
 bundle install
 rails db:create db:migrate
 rails server
