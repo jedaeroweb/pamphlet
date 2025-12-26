@@ -61,14 +61,14 @@ rails db:create db:migrate
 rails server
 ```
 
-## Server Requirements
+## 📌 Server Requirements
 
 [Rails](http://rubyonrails.org/) version 7 or newer is recommended.
 
-## License
+## 📄 License
 
 MIT License – completely free to use and modify
 
-## Author
+## 🤝 Author
 
 [jedaeroweb](https://www.jedaeroweb.co.kr)
