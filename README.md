@@ -2,16 +2,18 @@
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Template](https://img.shields.io/badge/Template-Repository-blue)
 
-# Rails Pamphlet Site
+# Overview
 
 A very simple pamphlet-style website built with Ruby on Rails.
 
 This project is designed to create a lightweight informational website
 with minimal features and a clean structure.
 
+> 단순 홍보, 소개,  문의 받기 기능이 필요하다면 바로 이걸 쓰면 됩니다.
+
 ---
 
-## 📄 What is this project?
+## 📄 Why this project?
 
 This is a simple Rails application for building a pamphlet-style website.
 
@@ -29,22 +31,14 @@ The focus of this project is **simplicity** rather than complex functionality.
 [demo page](https://pamphlet.jedaeroweb.co.kr)
 
 [demo admin page](https://pamphlet.jedaeroweb.co.kr/admin)
-admin / id=admin@jedaeroweb.co.kr password=a12345 
+admin / id=admin@jedaeroweb.co.kr password=a12345
 
-
-## ✨ Features
-
-- Static-style pages powered by Rails
-- Clean and minimal layout
-- Easy to customize content
-- Simple routing and structure
-- No unnecessary dependencies
+> 실제 동작 화면을 확인할 수 있는 데모 페이지입니다.
 
 ---
 
 ## 🛠 Tech Stack
 
-- Ruby
 - Ruby on Rails
 - HTML / CSS
 - Minimal JavaScript
@@ -65,16 +59,22 @@ then visit
 
 http://localhost:3000
 
+
+> 로컬 환경에서 바로 실행해볼 수 있습니다.
+
 ---
 
 ## 📌 Server Requirements
 
 [Rails](http://rubyonrails.org/) version 7 or newer is recommended.
+> Rails 7 이상 환경을 권장합니다.
 
 ## 📄 License
 
 MIT License – completely free to use and modify
+> 개인·상업적 사용 모두 완전히 자유롭습니다.
 
 ## ✍️ Author
 
-[jedaeroweb](https://www.jedaeroweb.co.kr)
+[Jeedaeroweb](https://www.jedaeroweb.co.kr)
+> 작성자 = 제대로웹
