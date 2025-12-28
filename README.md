@@ -40,8 +40,9 @@ admin / id=admin@jedaeroweb.co.kr password=a12345
 ## 🛠 Tech Stack
 
 - Ruby on Rails
+- MySQL / PostgreSQL / SQLite (any database supported by Rails)
 - HTML / CSS
-- Minimal JavaScript
+- JavaScript
 
 ---
 
