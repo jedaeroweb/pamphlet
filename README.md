@@ -27,7 +27,7 @@ The focus of this project is **simplicity** rather than complex functionality.
 
 ---
 
-## Demo
+## 👀 Demo
 [demo page](https://pamphlet.jedaeroweb.co.kr)
 
 [demo admin page](https://pamphlet.jedaeroweb.co.kr/admin)
@@ -68,7 +68,7 @@ http://localhost:3000
 - HTML / CSS
 - JavaScript
 
-## 📄 License
+## 📜 License
 
 MIT License – completely free to use and modify
 > 개인·상업적 사용 모두 완전히 자유롭습니다.
