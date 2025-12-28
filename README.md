@@ -37,15 +37,6 @@ admin / id=admin@jedaeroweb.co.kr password=a12345
 
 ---
 
-## 🛠 Tech Stack
-
-- Ruby on Rails
-- MySQL / PostgreSQL / SQLite (any database supported by Rails)
-- HTML / CSS
-- JavaScript
-
----
-
 ## 🚀 Getting Started
 
 ```bash
@@ -69,6 +60,13 @@ http://localhost:3000
 
 [Rails](http://rubyonrails.org/) version 7 or newer is recommended.
 > Rails 7 이상 환경을 권장합니다.
+
+## 🛠 Tech Stack
+
+- Ruby on Rails
+- MySQL / PostgreSQL / SQLite (any database supported by Rails)
+- HTML / CSS
+- JavaScript
 
 ## 📄 License
 
