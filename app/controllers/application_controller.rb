@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   layout :layout
 
+  before_action :set_locale
+
   def initialize(*params)
     super(*params)
 
@@ -27,6 +29,11 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_path, :notice => t(:login_first)
+  end
+
+  def set_locale
+    I18n.locale = params[:locale] || session[:locale] || I18n.default_locale
+    session[:locale] = I18n.locale
   end
 
   def layout

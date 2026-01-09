@@ -164,11 +164,13 @@ header nav ul.nav> li{
 #top-menu li a {text-decoration: none;vertical-align: bottom;display:block;padding:5px;}
 #top-menu li a i {text-align: center;vertical-align: bottom;margin-right:5px}
 
+#language-select {margin-top:1rem;font-size:1em}
+#language-select-layer {font-size:1.5rem}
+
 #sl_blog_categories ul li.active a {font-weight:bold}
 
 /* footer */
-footer {position:relative;padding-top:1em}
-#theme-selector {position: absolute; top:10px;right:10px}
+footer {position:relative;padding-top:0.8em}
 
 /* intro */
 #sl_intro_index #intro_main_content {float:left;width:100%;margin:0 0 20px}
