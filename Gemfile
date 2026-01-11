@@ -4,8 +4,8 @@ source "https://rubygems.org"
 gem "rails", "~> 7.1.5"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails"
-#gem "cssbundling-rails"
+#gem "sprockets-rails"
+gem "cssbundling-rails"
 
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", ">= 1.4"
@@ -38,6 +38,7 @@ gem "connection_pool", "~> 2.4"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
+gem "propshaft"
 gem "bootsnap", require: false
 gem 'devise'
 gem 'cancancan'
@@ -52,9 +53,6 @@ gem 'impressionist'
 gem 'acts-as-taggable-on'
 gem 'acts_as_commentable_with_threading'
 gem 'acts_as_votable'
-
-gem 'sassc-rails'
-gem 'bootstrap', '~> 5.3'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -95,6 +93,5 @@ group :production do
   gem "redis", "~> 5.0" # Redis client for Ruby
   gem "redis-actionpack", "~> 5.3" # Redis session store for ActionPack
   gem 'dotenv-rails'
-  gem 'recaptcha', :require => 'recaptcha/rails'
   gem 'rails-letsencrypt'
 end

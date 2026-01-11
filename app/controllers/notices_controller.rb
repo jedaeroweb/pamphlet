@@ -13,12 +13,33 @@ class NoticesController < ApplicationController
   # GET /notices
   # GET /notices.json
   def index
-    params[:per_page] = 10 unless params[:per_page].present?
+    if params[:search_detail].present?
+      session[:search_detail]=1
+    else
+      if params[:search_summary].present?
+        session.delete(:search_detail)
+      end
+    end
 
-    condition = {  enable: true }
+    if params[:list_type].present?
+      if params[:list_type]=='list'
+        session[:notice_list_type]='list'
+      else
+        session[:notice_list_type]='module'
+      end
+    end
+
+
+    condition = { enable: true }
 
     @notice_count = Notice.where(condition).count
     @notices = Notice.where(condition).page(params[:page]).per(params[:per_page]).order('id desc')
+
+
+    respond_to do |format|
+      format.html # _slide.html.erb
+      format.json { render json: @notices }
+    end
   end
 
   # GET /notices/1

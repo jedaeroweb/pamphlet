@@ -13,8 +13,8 @@
 
 @charset "utf-8";
 
-@import "bootstrap";
-@import "../fancybox";
+@use "bootstrap/scss/bootstrap" as *;
+@use "fancybox";
 
 @font-face {
   font-family: 'Nanum Gothic';
@@ -377,8 +377,8 @@ a.left:active {background-position: -60px 0}
 .box_header .box_icon {float:right;margin-top: 1px;}
 .box_header .box_icon i {-webkit-transition: all 0.1s ease-in-out;-moz-transition: all 0.1s ease-in-out;-o-transition: all 0.1s ease-in-out;-ms-transition: all 0.1s ease-in-out;transition: all 0.1s ease-in-out;opacity: .4;}
 .box_header .box_icon i:hover {opacity: .8;}
-.box_header .box_icon a {margin: 0px 5px;}
-.box_content {float:left;width:100%;margin-top: -1px;padding: 10px;border: 1px solid var(--bs-border-color);background: $secondary-bg ;border-radius: 0 0 2px 2px;box-shadow: 0 1px 0 rgba(255, 255, 255, .6);}
+.box_header .box_icon a {margin: 0 5px;}
+.box_content {float:left;width:100%;margin-top: -1px;padding: 10px;border: 1px solid var(--bs-border-color);border-radius: 0 0 2px 2px;box-shadow: 0 1px 0 rgba(255, 255, 255, .6);}
 
 .adsbygoogle {width:100%}
 
@@ -506,13 +506,19 @@ a.left:active {background-position: -60px 0}
 }
 
 @include color-mode(light) {
+  header a {
+    color: #666
+  }
+  header a:hover {
+    color: #333
+  }
+
   header {background: #fff}
   footer {color:#666;border-top-color:#ddd}
   .nav-link.disabled {color:#eee}
   .sl_content_header,.sl_content_main,.media {background-color:#fff}
   .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link,.nav-tabs {border-color:#ccc}
   .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {border-bottom-color:#f1f1f1}
-  a.btn-primary,a.btn-primary:visited {color:#ccc}
 
   #sl_intro_index .article1 h1 {color:#333}
   #sl_intro_index .article1 h1 .yellow {color:red}

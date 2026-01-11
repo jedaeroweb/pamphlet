@@ -447,6 +447,7 @@ ko:
         updated_at: '수정일'
         created_at: '작성일'
       notice :
+        user_id : '작성자'
         title : '제목'
         content : '내용'
         enable : '보임'

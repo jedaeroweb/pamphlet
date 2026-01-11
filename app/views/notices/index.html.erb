@@ -1,62 +1,31 @@
 <% breadcrumb :notices %>
-<section id="notices">
+<%
+  render_templete='index_default'
+
+  if session[:notice_list_type].present?
+    if session[:notice_list_type]=='list'
+      render_templete='index_list'
+    end
+  end
+
+%>
+<div id="notices">
   <div class="row">
     <div class="col-12">
-      <h2 class="float-start d-none d-lg-block"><%= t(:notice,scope: [:activerecord,:models]) %></h2>
+      <ul class="type-selector">
+        <li><%=link_to url_for(list_type: 'list') do %><span class="material-icons">view_list</span><% end %></li>
+        <li><%=link_to url_for(list_type: 'module') do %><span class="material-icons">view_module</span><% end %></li>
+      </ul>
+    </div>
+    <div class="col-12">
+      <h2 class="float-start hidden-title"><%= t(:notice,scope: [:activerecord,:models]) %></h2>
       <div class="float-end">
         <p class="summary text-end">
-          <span id="list_count d-none"><%= @notice_count %></span>
+          <span id="list_count" style="display:none"><%= @notice_count %></span>
           <%= raw t(:there_are_n_notices, count: @notice_count) %>
         </p>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-12">
-      <div class="table-responsive">
-        <table class="table table-striped sl-table">
-          <colgroup>
-            <col>
-            <col>
-            <col class="none d-lg-table-cell">
-          </colgroup>
-          <thead class="thead-default">
-          <tr>
-            <th><%= t(:title, scope: [:activerecord, :attributes, :notice]) %></th>
-            <th class="text-end"><%= t(:label_count) %></th>
-            <th class="text-end d-none d-lg-table-cell"><%= t(:created_at, scope: [:activerecord, :attributes, :notice]) %></th>
-          </tr>
-          </thead>
-          <tbody>
-          <% unless @notice_count.zero? %>
-            <% @notices.each do |notice| %>
-              <tr>
-                <td><%= link_to notice.title, notice %></td>
-                <td class="text-end"><%= notice.impressionist_count(:filter => :ip_address) %></td>
-                <td class="text-end text-secondary d-none d-lg-table-cell"><%= time_ago_in_words notice.created_at.to_date %></td>
-              </tr>
-            <% end %>
-          <% else %>
-            <tr>
-              <td colspan="4"><%= t(:no_data) %></td>
-            </tr>
-          <% end %>
-          </tbody>
-        </table>
-        <div id="sl_bottom_menu">
-          <%= paginate @notices %>
-        </div>
-      </div>
-    </div>
-    <% if admin_signed_in? %>
-    <div class="col-12">
-      <%=link_to t(:new_notice),new_notice_path,class: 'btn btn-primary btn-large' %>
-    </div>
-    <% end %>
-  </div>
-</section>
-<% content_for :json_ld do %>
-  <script type="application/ld+json">
-    <%= raw(JSON.pretty_generate(json_ld_for_notice_list(@notices))) %>
-  </script>
-<% end %>
+  <%=render render_templete %>
+</div>

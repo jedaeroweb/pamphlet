@@ -1,0 +1,17 @@
+<div class="col-12">
+<%=form_tag notices_path,{method:'get'} do %>
+  <input type="hidden" name="search" value="1">
+    <%
+      search_params={search_detail:true}
+
+      aa_class='nav-link'
+      if @notice_category.present?
+        search_params[:category]=@notice_category
+      else
+        aa_class+=' active'
+      end
+      %>
+  <%=link_to notices_path(search_params),id: "search-detail" do %><span class="material-icons">search</span><%=t(:search) %><% end  %>
+  <!-- <%=submit_tag t(:search),class: 'btn btn-primary btn-block btn-search' %> -->
+  <% end %>
+</div>

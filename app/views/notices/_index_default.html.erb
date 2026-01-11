@@ -1,0 +1,19 @@
+<section class="row">
+  <% unless @notice_count.zero? %>
+    <% @notices.each do |notice| %>
+      <%=render 'index_media',notice: notice %>
+    <% end %>
+    <div class="col-12">
+      <%= paginate @notices %>
+    </div>
+  <% else %>
+    <div class="notice col-12">
+      <%= t(:no_data) %>
+    </div>
+  <% end %>
+  <% if admin_signed_in? %>
+  <div class="col-12">
+    <%=link_to t(:link_new),new_notice_path,class: 'btn btn-primary btn-large' %>
+  </div>
+    <% end %>
+</section>

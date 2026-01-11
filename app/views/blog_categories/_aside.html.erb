@@ -6,7 +6,7 @@
       <a href="#" class="btn_close"><i class="material-icons">close</i></a>
     </div> -->
 	</div>
-	<div class="box_content">
+	<div class="box_content bg-body-secondary">
 		<ul>
 			<li <% unless params[:blog_category_id] %>class="active"<% end %>><%=link_to t(:all_category),blogs_path %></li>
 			<% unless @aside_blog_categories.empty? %>
