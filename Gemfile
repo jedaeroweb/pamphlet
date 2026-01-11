@@ -4,7 +4,6 @@ source "https://rubygems.org"
 gem "rails", "~> 7.1.5"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-#gem "sprockets-rails"
 gem "cssbundling-rails"
 
 # Use sqlite3 as the database for Active Record
@@ -93,5 +92,4 @@ group :production do
   gem "redis", "~> 5.0" # Redis client for Ruby
   gem "redis-actionpack", "~> 5.3" # Redis session store for ActionPack
   gem 'dotenv-rails'
-  gem 'rails-letsencrypt'
 end
