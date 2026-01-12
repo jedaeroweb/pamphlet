@@ -24,6 +24,13 @@ class ContactsController < ApplicationController
   # POST /contact
   # POST /contact.json
   def create
+    if Rails.env.production?
+      unless verify_turnstile
+        flash.now[:alert] = "로봇 차단됨"
+        render :new and return
+      end
+    end
+
     ActiveRecord::Base.transaction do
       # 로그인한 경우: 폼의 name/email은 무시하고 현재 사용자에 연결
       if user_signed_in?
