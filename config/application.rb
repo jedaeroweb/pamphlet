@@ -26,7 +26,6 @@ module Pamphlet
     config.i18n.enforce_available_locales = true
 
     # Configuration for the application, engines, and railties goes here.
-    config.assets.enabled = true
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
